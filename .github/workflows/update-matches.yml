@@ -24,6 +24,7 @@ jobs:
       - name: Mettre à jour les matchs
         env:
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
         run: node update-data.mjs
 
       - name: Enregistrer les nouvelles données
