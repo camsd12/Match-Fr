@@ -135,6 +135,7 @@ async function addBeinBroadcasters() {
     console.log(`beIN SPORTS : __NEXT_DATA__=${page.includes("__NEXT_DATA__")}`);
     console.log(`beIN SPORTS : __NEXT_DATA__ position=${page.indexOf("__NEXT_DATA__")}`);
     console.log(`beIN SPORTS : après NEXT_DATA=${page.slice(page.indexOf("__NEXT_DATA__"), page.indexOf("__NEXT_DATA__") + 500)}`);
+    console.log(`beIN SPORTS : pageProps position=${page.indexOf('"pageProps"')}`);
     const nbaIndex = page.indexOf("NBA");
     const basketIndex = page.indexOf("Basket-ball");
     const displayIndex = page.indexOf('"display_name"');
