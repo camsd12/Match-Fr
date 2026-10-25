@@ -320,7 +320,7 @@
     "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/nyk.png",
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
     "utc": "2026-10-25T23:00:00.000Z",
-    "status": "scheduled",
+    "status": "in_progress",
     "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
@@ -346,7 +346,7 @@
     "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
     "utc": "2026-10-25T23:00:00.000Z",
-    "status": "scheduled",
+    "status": "in_progress",
     "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
