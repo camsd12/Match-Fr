@@ -51,10 +51,6 @@ async function football() {
 }
 
 
-durandcamille12@gmail.com
-15:01 (il y a 0 minute)
-À moi
-
 async function nba() {
   const apiKey = process.env.BALLDONTLIE_API_KEY;
 
