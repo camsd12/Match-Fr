@@ -193,23 +193,28 @@ for (const scriptUrl of scriptUrls.slice(0, 30)) {
     if (!sr.ok) continue;
 
     const js = await sr.text();
-    const scheduledWords = [
-  "onsScheduledEvents",
-  "scheduledEvents",
-  "selectedTime",
-  "channelId"
-];
+    
 
-for (const word of scheduledWords) {
-  const pos = js.indexOf(word);
+const lowerJs = js.toLowerCase();
 
-  if (pos >= 0) {
-    console.log(`🎯 beIN TROUVÉ ${word} : ${scriptUrl}`);
-    console.log(`🎯 beIN CODE ${word} : ${js.slice(Math.max(0, pos - 1500), pos + 5000)}`);
+for (const match of out) {
+  if (match.sport !== "NBA") continue;
+
+  const home = normalizeTeamName(match.home);
+  const away = normalizeTeamName(match.away);
+
+  if (!home || !away) continue;
+
+  const compactJs = normalizeTeamName(lowerJs);
+
+  if (compactJs.includes(home) && compactJs.includes(away)) {
+    if (!match.tv.includes("beIN SPORTS")) {
+      match.tv = `beIN SPORTS • ${match.tv}`;
+    }
+
+    console.log(`📺 beIN confirmé : ${match.home} - ${match.away}`);
   }
 }
-
-
 
     if (/tv-guide|\/api\/|schedule|epg|broadcast|channel|programming/i.test(js)) {
       console.log(`beIN SCRIPT intéressant : ${scriptUrl}`);
