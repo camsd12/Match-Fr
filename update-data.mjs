@@ -136,6 +136,29 @@ async function addBeinBroadcasters() {
     console.log(`beIN SPORTS : __NEXT_DATA__ position=${page.indexOf("__NEXT_DATA__")}`);
     console.log(`beIN SPORTS : après NEXT_DATA=${page.slice(page.indexOf("__NEXT_DATA__"), page.indexOf("__NEXT_DATA__") + 500)}`);
     console.log(`beIN SPORTS : pageProps position=${page.indexOf('"pageProps"')}`);
+    const nextStart = page.indexOf('<script id="__NEXT_DATA__"');
+const nextOpen = page.indexOf(">", nextStart) + 1;
+const nextEnd = page.indexOf("</script>", nextOpen);
+
+if (nextStart >= 0 && nextOpen > 0 && nextEnd > nextOpen) {
+  try {
+    const nextJsonText = page.slice(nextOpen, nextEnd);
+    const nextData = JSON.parse(nextJsonText);
+    const nextText = JSON.stringify(nextData);
+
+    console.log(`beIN NEXT : JSON valide = oui`);
+    console.log(`beIN NEXT : taille JSON = ${nextText.length}`);
+    console.log(`beIN NEXT : NBA = ${nextText.toLowerCase().includes("nba")}`);
+    console.log(`beIN NEXT : Lakers = ${nextText.toLowerCase().includes("lakers")}`);
+    console.log(`beIN NEXT : Celtics = ${nextText.toLowerCase().includes("celtics")}`);
+    console.log(`beIN NEXT : Warriors = ${nextText.toLowerCase().includes("warriors")}`);
+    console.log(`beIN NEXT : Knicks = ${nextText.toLowerCase().includes("knicks")}`);
+  } catch (e) {
+    console.log(`beIN NEXT : erreur JSON = ${e.message}`);
+  }
+} else {
+  console.log("beIN NEXT : bloc introuvable");
+}
     const nbaIndex = page.indexOf("NBA");
     const basketIndex = page.indexOf("Basket-ball");
     const displayIndex = page.indexOf('"display_name"');
