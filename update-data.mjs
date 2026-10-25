@@ -105,7 +105,7 @@ async function nba() {
         awayIcon: nbaLogo(a),
         utc: dt.toISOString(),
         status: g.status_state || g.status || "scheduled",
-        tv: "Diffuseur FR à confirmer",
+        tv: "NBA League Pass",
         source: "BALLDONTLIE"
       });
     }
