@@ -50,61 +50,68 @@ async function football() {
   }
 }
 
+
+durandcamille12@gmail.com
+15:01 (il y a 0 minute)
+À moi
+
 async function nba() {
-  const url = 'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json';
+  const apiKey = process.env.BALLDONTLIE_API_KEY;
+
+  if (!apiKey) {
+    console.warn("NBA: BALLDONTLIE_API_KEY absente");
+    return;
+  }
 
   try {
+    const url =
+      `https://api.balldontlie.io/v1/games?start_date=${from}&end_date=${to}&per_page=100`;
+
     const r = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Origin': 'https://www.nba.com',
-        'Referer': 'https://www.nba.com/'
+        Authorization: apiKey
       }
     });
 
     if (!r.ok) {
-      console.warn(`NBA: HTTP ${r.status}`);
+      console.warn(`NBA BALLDONTLIE: HTTP ${r.status}`);
       return;
     }
 
     const j = await r.json();
-    const dates = j?.leagueSchedule?.gameDates || [];
+    const games = j.data || [];
 
-    const limit = new Date(toDate);
-    limit.setUTCDate(limit.getUTCDate() + 1);
+    for (const g of games) {
+      const raw = g.datetime || g.date;
+      if (!raw) continue;
 
-    for (const d of dates) {
-      for (const g of (d.games || [])) {
-        const raw = g.gameDateTimeUTC || g.gameDateTimeEst || g.gameDateTimeUTCString;
-        if (!raw) continue;
+      const dt = new Date(raw);
+      if (Number.isNaN(dt.valueOf())) continue;
 
-        const dt = new Date(raw);
-        if (Number.isNaN(dt.valueOf()) || dt < now || dt > limit) continue;
+      const h = g.home_team || {};
+      const a = g.visitor_team || {};
 
-        const h = g.homeTeam || {};
-        const a = g.awayTeam || {};
-
-        out.push({
-          id: `nba-${g.gameId}`,
-          sport: 'NBA',
-          comp: 'NBA',
-          home: h.teamName || h.teamCity || 'Home',
-          away: a.teamName || a.teamCity || 'Away',
-          homeIcon: h.teamId ? `https://cdn.nba.com/logos/nba/${h.teamId}/primary/L/logo.png` : '🏀',
-          awayIcon: a.teamId ? `https://cdn.nba.com/logos/nba/${a.teamId}/primary/L/logo.png` : '🏀',
-          utc: dt.toISOString(),
-          status: g.gameStatusText || 'Scheduled',
-          tv: 'NBA League Pass',
-          source: 'NBA'
-        });
-      }
+      out.push({
+        id: `nba-${g.id}`,
+        sport: "NBA",
+        comp: "NBA",
+        home: h.full_name || h.name || "Home",
+        away: a.full_name || a.name || "Away",
+        homeIcon: "🏀",
+        awayIcon: "🏀",
+        utc: dt.toISOString(),
+        status: g.status_state || g.status || "scheduled",
+        tv: "Diffuseur FR à confirmer",
+        source: "BALLDONTLIE"
+      });
     }
+
+    console.log(`${games.length} matchs NBA récupérés`);
   } catch (e) {
-    console.warn('NBA:', e.message);
+    console.warn("NBA BALLDONTLIE:", e.message);
   }
 }
+
 
 
 await Promise.all([football(),nba()]);
