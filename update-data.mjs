@@ -62,6 +62,6 @@ async function nba() {
 
 await Promise.all([football(),nba()]);
 out.sort((a,b)=>new Date(a.utc)-new Date(b.utc));
-await fs.writeFile(new URL('../matches.json',import.meta.url), JSON.stringify(out,null,2)+'\n');
-await fs.writeFile(new URL('../last-update.json',import.meta.url), JSON.stringify({updatedAt:new Date().toISOString(),count:out.length},null,2)+'\n');
+await fs.writeFile(new URL('./matches.json', import.meta.url), JSON.stringify(out,null,2)+'\n');
+await fs.writeFile(new URL('./last-update.json', import.meta.url), JSON.stringify({updatedAt:new Date().toISOString(),count:out.length},null,2)+'\n');
 console.log(`${out.length} matchs enregistrés`);
