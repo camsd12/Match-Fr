@@ -132,6 +132,7 @@ async function addBeinBroadcasters() {
     }
 
     const page = await r.text();
+    console.log(`beIN SPORTS : __NEXT_DATA__=${page.includes("__NEXT_DATA__")}`);
     const nbaIndex = page.indexOf("NBA");
     const basketIndex = page.indexOf("Basket-ball");
     const displayIndex = page.indexOf('"display_name"');
