@@ -115,10 +115,49 @@ async function nba() {
     console.warn("NBA BALLDONTLIE:", e.message);
   }
 }
+function normalizeTeamName(name) {
+  return String(name || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+async function addBeinBroadcasters() {
+  try {
+    const r = await fetch("https://www.beinsports.com/fr-fr/tv-guide");
 
+    if (!r.ok) {
+      console.warn(`beIN SPORTS: HTTP ${r.status}`);
+      return;
+    }
 
+    const page = await r.text();
+    const normalizedPage = normalizeTeamName(page);
+
+    for (const match of out) {
+      if (match.sport !== "NBA") continue;
+
+      const home = normalizeTeamName(match.home);
+      const away = normalizeTeamName(match.away);
+
+      if (
+        home &&
+        away &&
+        normalizedPage.includes(home) &&
+        normalizedPage.includes(away)
+      ) {
+        match.tv = "beIN SPORTS • NBA League Pass";
+      }
+    }
+
+    console.log("Vérification beIN SPORTS terminée");
+  } catch (e) {
+    console.warn("beIN SPORTS:", e.message);
+  }
+}
 
 await Promise.all([football(),nba()]);
+await addBeinBroadcasters();
 out.sort((a,b)=>new Date(a.utc)-new Date(b.utc));
 await fs.writeFile(new URL('./matches.json', import.meta.url), JSON.stringify(out,null,2)+'\n');
 await fs.writeFile(new URL('./last-update.json', import.meta.url), JSON.stringify({updatedAt:new Date().toISOString(),count:out.length},null,2)+'\n');
