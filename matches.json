@@ -268,7 +268,7 @@
     "homeIcon": "https://crests.football-data.org/115.png",
     "awayIcon": "https://crests.football-data.org/98.png",
     "utc": "2026-10-25T19:45:00Z",
-    "status": "IN_PLAY",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -281,7 +281,7 @@
     "homeIcon": "https://crests.football-data.org/81.png",
     "awayIcon": "https://crests.football-data.org/86.png",
     "utc": "2026-10-25T20:00:00Z",
-    "status": "IN_PLAY",
+    "status": "FINISHED",
     "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
@@ -294,7 +294,7 @@
     "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
     "utc": "2026-10-25T21:00:00.000Z",
-    "status": "scheduled",
+    "status": "in_progress",
     "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
@@ -307,7 +307,7 @@
     "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
     "utc": "2026-10-25T22:00:00.000Z",
-    "status": "scheduled",
+    "status": "in_progress",
     "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
