@@ -150,7 +150,8 @@ async function addBeinBroadcasters() {
       }
     }
 
-    console.log("Vérification beIN SPORTS terminée");
+    console.log(`beIN SPORTS : page reçue (${page.length} caractères)`);
+    console.log(`beIN SPORTS : Utah=${normalizedPage.includes("utahjazz")} Lakers=${normalizedPage.includes("losangeleslakers")}`);
   } catch (e) {
     console.warn("beIN SPORTS:", e.message);
   }
