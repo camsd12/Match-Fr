@@ -159,6 +159,19 @@ if (nextStart >= 0 && nextOpen > 0 && nextEnd > nextOpen) {
 } else {
   console.log("beIN NEXT : bloc introuvable");
 }
+   const urlsFound = [...page.matchAll(/https?:\\?\/\\?\/[^"'<> ]+/g)]
+  .map(m => m[0].replace(/\\\//g, "/"))
+  .filter(url =>
+    /api|schedule|guide|event|program|epg|fixture|match/i.test(url)
+  );
+
+const uniqueUrls = [...new Set(urlsFound)];
+
+console.log(`beIN SOURCES : ${uniqueUrls.length} adresse(s) intéressante(s)`);
+
+for (const url of uniqueUrls.slice(0, 20)) {
+  console.log(`beIN SOURCE : ${url}`);
+}
     const nbaIndex = page.indexOf("NBA");
     const basketIndex = page.indexOf("Basket-ball");
     const displayIndex = page.indexOf('"display_name"');
