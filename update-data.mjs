@@ -12,6 +12,22 @@ const toDate = new Date(now); toDate.setUTCDate(toDate.getUTCDate()+14);
 const to = toDate.toISOString().slice(0,10);
 const out = [];
 
+function frenchBroadcaster(code) {
+  const broadcasters = {
+    FL1: 'Ligue 1+',
+    FL2: 'beIN SPORTS',
+    CL: 'CANAL+',
+    EL: 'CANAL+',
+    EC: 'CANAL+',
+    PL: 'CANAL+',
+    PD: 'DAZN / Disney+',
+    SA: 'DAZN',
+    BL1: 'beIN SPORTS'
+  };
+
+  return broadcasters[code] || 'Diffuseur FR à confirmer';
+}
+
 async function football() {
   if (!token) { console.warn('FOOTBALL_DATA_TOKEN absent: football ignoré'); return; }
   for (const [code,label] of footballCompetitions) {
@@ -27,7 +43,7 @@ async function football() {
           home:m.homeTeam?.shortName||m.homeTeam?.name||'À confirmer',
           away:m.awayTeam?.shortName||m.awayTeam?.name||'À confirmer',
           homeIcon:m.homeTeam?.crest||'', awayIcon:m.awayTeam?.crest||'',
-          utc:m.utcDate, status:m.status||'SCHEDULED', tv:'Diffuseur FR à confirmer', source:'football-data.org'
+          utc:m.utcDate, status:m.status||'SCHEDULED', tv: frenchBroadcaster(code), source:'football-data.org'
         });
       }
     } catch(e) { console.warn(label, e.message); }
