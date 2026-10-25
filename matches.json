@@ -268,7 +268,7 @@
     "homeIcon": "https://crests.football-data.org/115.png",
     "awayIcon": "https://crests.football-data.org/98.png",
     "utc": "2026-10-25T19:45:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -295,7 +295,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
     "utc": "2026-10-25T21:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -308,7 +308,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
     "utc": "2026-10-25T22:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -321,7 +321,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
     "utc": "2026-10-25T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -334,7 +334,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
     "utc": "2026-10-25T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -347,7 +347,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
     "utc": "2026-10-25T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -360,7 +360,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
     "utc": "2026-10-25T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -373,7 +373,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
     "utc": "2026-10-26T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -412,7 +412,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/was.png",
     "utc": "2026-10-26T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -425,7 +425,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
     "utc": "2026-10-26T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -438,7 +438,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
     "utc": "2026-10-26T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -451,7 +451,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
     "utc": "2026-10-26T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -464,7 +464,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
     "utc": "2026-10-27T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -477,7 +477,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
     "utc": "2026-10-27T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -490,7 +490,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
     "utc": "2026-10-27T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -503,7 +503,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
     "utc": "2026-10-27T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -516,7 +516,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/gsw.png",
     "utc": "2026-10-27T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -568,7 +568,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
     "utc": "2026-10-27T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -581,7 +581,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
     "utc": "2026-10-28T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -594,7 +594,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
     "utc": "2026-10-28T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -607,7 +607,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
     "utc": "2026-10-28T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -685,7 +685,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
     "utc": "2026-10-28T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -698,7 +698,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/was.png",
     "utc": "2026-10-28T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -711,7 +711,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
     "utc": "2026-10-28T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -724,7 +724,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
     "utc": "2026-10-28T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -737,7 +737,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
     "utc": "2026-10-28T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -750,7 +750,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/nyk.png",
     "utc": "2026-10-29T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -763,7 +763,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
     "utc": "2026-10-29T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -776,7 +776,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/gsw.png",
     "utc": "2026-10-29T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -789,7 +789,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
     "utc": "2026-10-29T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -802,7 +802,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/sas.png",
     "utc": "2026-10-29T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -815,7 +815,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
     "utc": "2026-10-29T01:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -828,7 +828,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
     "utc": "2026-10-29T02:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -867,7 +867,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
     "utc": "2026-10-29T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -880,7 +880,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
     "utc": "2026-10-30T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -893,7 +893,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
     "utc": "2026-10-30T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -958,7 +958,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
     "utc": "2026-10-30T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -971,7 +971,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
     "utc": "2026-10-30T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -984,7 +984,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
     "utc": "2026-10-30T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -997,7 +997,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/nyk.png",
     "utc": "2026-10-30T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1010,7 +1010,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
     "utc": "2026-10-30T23:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1023,7 +1023,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
     "utc": "2026-10-31T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1036,7 +1036,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
     "utc": "2026-10-31T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1049,7 +1049,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
     "utc": "2026-10-31T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1062,7 +1062,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
     "utc": "2026-10-31T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1075,7 +1075,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
     "utc": "2026-10-31T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1335,7 +1335,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
     "utc": "2026-10-31T19:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1426,7 +1426,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
     "utc": "2026-10-31T22:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1439,7 +1439,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
     "utc": "2026-10-31T23:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1452,7 +1452,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
     "utc": "2026-11-01T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1465,7 +1465,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
     "utc": "2026-11-01T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1478,7 +1478,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
     "utc": "2026-11-01T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1491,7 +1491,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
     "utc": "2026-11-01T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1699,7 +1699,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
     "utc": "2026-11-01T20:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1712,7 +1712,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
     "utc": "2026-11-01T22:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1725,7 +1725,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
     "utc": "2026-11-02T01:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1738,7 +1738,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
     "utc": "2026-11-02T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1803,7 +1803,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
     "utc": "2026-11-03T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1816,7 +1816,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
     "utc": "2026-11-03T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1829,7 +1829,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
     "utc": "2026-11-03T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1842,7 +1842,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
     "utc": "2026-11-03T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1855,7 +1855,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/was.png",
     "utc": "2026-11-03T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1868,7 +1868,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
     "utc": "2026-11-03T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1881,7 +1881,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
     "utc": "2026-11-03T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1894,7 +1894,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/nop.png",
     "utc": "2026-11-03T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1907,7 +1907,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
     "utc": "2026-11-03T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1920,7 +1920,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
     "utc": "2026-11-03T01:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1933,7 +1933,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
     "utc": "2026-11-03T01:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1946,7 +1946,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
     "utc": "2026-11-03T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1959,7 +1959,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
     "utc": "2026-11-03T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1972,7 +1972,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
     "utc": "2026-11-03T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -1985,7 +1985,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
     "utc": "2026-11-03T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2232,7 +2232,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
     "utc": "2026-11-05T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2245,7 +2245,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
     "utc": "2026-11-05T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2258,7 +2258,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
     "utc": "2026-11-05T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2271,7 +2271,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
     "utc": "2026-11-05T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2284,7 +2284,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
     "utc": "2026-11-05T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2297,7 +2297,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
     "utc": "2026-11-05T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2310,7 +2310,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
     "utc": "2026-11-05T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2323,7 +2323,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
     "utc": "2026-11-05T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2336,7 +2336,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
     "utc": "2026-11-05T01:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2349,7 +2349,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
     "utc": "2026-11-05T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2362,7 +2362,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
     "utc": "2026-11-05T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2375,7 +2375,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
     "utc": "2026-11-05T02:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2388,7 +2388,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
     "utc": "2026-11-05T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2401,7 +2401,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
     "utc": "2026-11-05T03:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2414,7 +2414,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
     "utc": "2026-11-06T02:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2427,7 +2427,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
     "utc": "2026-11-06T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2505,7 +2505,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/was.png",
     "utc": "2026-11-07T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2518,7 +2518,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
     "utc": "2026-11-07T00:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2531,7 +2531,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
     "utc": "2026-11-07T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2544,7 +2544,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
     "utc": "2026-11-07T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2557,7 +2557,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
     "utc": "2026-11-07T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2570,7 +2570,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
     "utc": "2026-11-07T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2583,7 +2583,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
     "utc": "2026-11-07T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2596,7 +2596,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
     "utc": "2026-11-07T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2609,7 +2609,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/sas.png",
     "utc": "2026-11-07T03:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2869,7 +2869,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
     "utc": "2026-11-07T22:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2882,7 +2882,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
     "utc": "2026-11-08T00:30:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2895,7 +2895,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/nyk.png",
     "utc": "2026-11-08T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
@@ -2908,7 +2908,7 @@
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/was.png",
     "utc": "2026-11-08T01:00:00.000Z",
     "status": "scheduled",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
   {
