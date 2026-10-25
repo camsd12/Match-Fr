@@ -140,6 +140,8 @@ async function addBeinBroadcasters() {
     console.log(`beIN SPORTS : position Basket-ball=${basketIndex}`);
     console.log(`beIN SPORTS : position display_name=${displayIndex}`);
     console.log(`beIN SPORTS : position short_name NBA=${shortNameIndex}`);
+    console.log(`beIN SPORTS : autour short_name NBA=${shortNameIndex >= 0 ? page.slice(Math.max(0, shortNameIndex - 1000), shortNameIndex + 1000) : "short_name NBA introuvable"}`);
+    console.log(`beIN SPORTS : Lakers=${page.toLowerCase().includes("lakers")} Celtics=${page.toLowerCase().includes("celtics")} Knicks=${page.toLowerCase().includes("knicks")} Warriors=${page.toLowerCase().includes("warriors")}`);
     console.log(`beIN SPORTS : extrait display_name=${displayIndex >= 0 ? page.slice(displayIndex, displayIndex + 500) : "display_name introuvable"}`);
     console.log(`beIN SPORTS : extrait=${nbaIndex >= 0 ? page.slice(nbaIndex, nbaIndex + 500) : "NBA introuvable"}`);
     console.log(`beIN SPORTS : avant NBA=${nbaIndex >= 0 ? page.slice(Math.max(0, nbaIndex - 500), nbaIndex) : "NBA introuvable"}`);
