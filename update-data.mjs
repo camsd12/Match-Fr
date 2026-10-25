@@ -51,30 +51,61 @@ async function football() {
 }
 
 async function nba() {
-  const urls = [
-    'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json',
-    'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json'
-  ];
-  let j;
-  for (const u of urls) {
-    try { const r=await fetch(u); if(r.ok){j=await r.json(); break;} } catch {}
-  }
-  if (!j) { console.warn('NBA: calendrier indisponible'); return; }
-  const dates=j?.leagueSchedule?.gameDates||[];
-  const limit=new Date(toDate); limit.setUTCDate(limit.getUTCDate()+1);
-  for (const d of dates) for (const g of (d.games||[])) {
-    const raw=g.gameDateTimeUTC || g.gameDateTimeEst || g.gameDateTimeUTCString;
-    if(!raw) continue;
-    const dt=new Date(raw); if(Number.isNaN(dt.valueOf()) || dt < now || dt > limit) continue;
-    const h=g.homeTeam||{}, a=g.awayTeam||{};
-    out.push({
-      id:`nba-${g.gameId}`, sport:'NBA', comp:'NBA',
-      home:h.teamName||h.teamCity||'Home', away:a.teamName||a.teamCity||'Away',
-      homeIcon:'🏀', awayIcon:'🏀', utc:dt.toISOString(), status:g.gameStatusText||'Scheduled',
-      tv:'Diffuseur FR à confirmer', source:'NBA'
+  const url = 'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json';
+
+  try {
+    const r = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Origin': 'https://www.nba.com',
+        'Referer': 'https://www.nba.com/'
+      }
     });
+
+    if (!r.ok) {
+      console.warn(`NBA: HTTP ${r.status}`);
+      return;
+    }
+
+    const j = await r.json();
+    const dates = j?.leagueSchedule?.gameDates || [];
+
+    const limit = new Date(toDate);
+    limit.setUTCDate(limit.getUTCDate() + 1);
+
+    for (const d of dates) {
+      for (const g of (d.games || [])) {
+        const raw = g.gameDateTimeUTC || g.gameDateTimeEst || g.gameDateTimeUTCString;
+        if (!raw) continue;
+
+        const dt = new Date(raw);
+        if (Number.isNaN(dt.valueOf()) || dt < now || dt > limit) continue;
+
+        const h = g.homeTeam || {};
+        const a = g.awayTeam || {};
+
+        out.push({
+          id: `nba-${g.gameId}`,
+          sport: 'NBA',
+          comp: 'NBA',
+          home: h.teamName || h.teamCity || 'Home',
+          away: a.teamName || a.teamCity || 'Away',
+          homeIcon: h.teamId ? `https://cdn.nba.com/logos/nba/${h.teamId}/primary/L/logo.png` : '🏀',
+          awayIcon: a.teamId ? `https://cdn.nba.com/logos/nba/${a.teamId}/primary/L/logo.png` : '🏀',
+          utc: dt.toISOString(),
+          status: g.gameStatusText || 'Scheduled',
+          tv: 'NBA League Pass',
+          source: 'NBA'
+        });
+      }
+    }
+  } catch (e) {
+    console.warn('NBA:', e.message);
   }
 }
+
 
 await Promise.all([football(),nba()]);
 out.sort((a,b)=>new Date(a.utc)-new Date(b.utc));
