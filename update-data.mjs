@@ -137,6 +137,7 @@ async function addBeinBroadcasters() {
     console.log(`beIN SPORTS : position NBA=${nbaIndex}`);
     console.log(`beIN SPORTS : position Basket-ball=${basketIndex}`);
     console.log(`beIN SPORTS : extrait=${nbaIndex >= 0 ? page.slice(nbaIndex, nbaIndex + 500) : "NBA introuvable"}`);
+    console.log(`beIN SPORTS : avant NBA=${nbaIndex >= 0 ? page.slice(Math.max(0, nbaIndex - 500), nbaIndex) : "NBA introuvable"}`);
     const normalizedPage = normalizeTeamName(page);
 
     for (const match of out) {
