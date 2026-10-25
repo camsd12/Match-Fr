@@ -133,7 +133,9 @@ async function addBeinBroadcasters() {
 
     const page = await r.text();
     const nbaIndex = page.indexOf("NBA");
+    const basketIndex = page.indexOf("Basket-ball");
     console.log(`beIN SPORTS : position NBA=${nbaIndex}`);
+    console.log(`beIN SPORTS : position Basket-ball=${basketIndex}`);
     console.log(`beIN SPORTS : extrait=${nbaIndex >= 0 ? page.slice(nbaIndex, nbaIndex + 500) : "NBA introuvable"}`);
     const normalizedPage = normalizeTeamName(page);
 
