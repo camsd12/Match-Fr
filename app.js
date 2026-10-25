@@ -2,7 +2,7 @@ let filter='all', matches=[];
 const fmtD=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'long',day:'numeric',month:'long'});
 const fmtT=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit'});
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function badge(x,fallback){return x&&/^https?:/.test(x)?`<img class="crest" src="${esc(x)}" alt="">`:`<span class="badge">${esc(x||fallback)}</span>`}
+function badge(x,fallback){return x&&/^https?:/.test(x)?`<span class="badge"><img class="crest" src="${esc(x)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span style="display:none">${esc(fallback||'🏀')}</span></span>`:`<span class="badge">${esc(x||fallback||'🏀')}</span>`}
 function render(){
  const root=document.querySelector('#matches'); root.innerHTML=''; const groups={};
  matches.filter(x=>filter==='all'||x.sport===filter).forEach(x=>{const d=fmtD.format(new Date(x.utc));(groups[d]??=[]).push(x)});
