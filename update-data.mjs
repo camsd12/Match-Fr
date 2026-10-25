@@ -193,12 +193,22 @@ for (const scriptUrl of scriptUrls.slice(0, 30)) {
     if (!sr.ok) continue;
 
     const js = await sr.text();
-    const scheduledPos = js.indexOf("onsScheduledEvents");
+    const scheduledWords = [
+  "onsScheduledEvents",
+  "scheduledEvents",
+  "selectedTime",
+  "channelId"
+];
 
-if (scheduledPos >= 0) {
-  console.log(`🎯 beIN SCHEDULE TROUVÉ : ${scriptUrl}`);
-  console.log(`🎯 beIN SCHEDULE CODE : ${js.slice(Math.max(0, scheduledPos - 2000), scheduledPos + 4000)}`);
+for (const word of scheduledWords) {
+  const pos = js.indexOf(word);
+
+  if (pos >= 0) {
+    console.log(`🎯 beIN TROUVÉ ${word} : ${scriptUrl}`);
+    console.log(`🎯 beIN CODE ${word} : ${js.slice(Math.max(0, pos - 1500), pos + 5000)}`);
+  }
 }
+
 
 
     if (/tv-guide|\/api\/|schedule|epg|broadcast|channel|programming/i.test(js)) {
