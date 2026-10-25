@@ -172,6 +172,47 @@ console.log(`beIN SOURCES : ${uniqueUrls.length} adresse(s) intéressante(s)`);
 for (const url of uniqueUrls.slice(0, 20)) {
   console.log(`beIN SOURCE : ${url}`);
 }
+   const scriptMatches = [...page.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)];
+const scriptUrls = [...new Set(
+  scriptMatches.map(m => {
+    const src = m[1];
+
+    if (src.startsWith("http")) return src;
+    if (src.startsWith("//")) return "https:" + src;
+    if (src.startsWith("/")) return "https://www.beinsports.com" + src;
+
+    return null;
+  }).filter(Boolean)
+)];
+
+console.log(`beIN SCRIPTS : ${scriptUrls.length} script(s) trouvé(s)`);
+
+for (const scriptUrl of scriptUrls.slice(0, 30)) {
+  try {
+    const sr = await fetch(scriptUrl);
+    if (!sr.ok) continue;
+
+    const js = await sr.text();
+
+    if (/tv-guide|schedule|epg|program|fixture|event/i.test(js)) {
+      console.log(`beIN SCRIPT intéressant : ${scriptUrl}`);
+
+      const words = ["tv-guide", "schedule", "epg", "program", "fixture", "event"];
+
+      for (const word of words) {
+        const pos = js.toLowerCase().indexOf(word);
+
+        if (pos >= 0) {
+          console.log(
+            `beIN JS ${word} : ${js.slice(Math.max(0, pos - 250), pos + 500)}`
+          );
+        }
+      }
+    }
+  } catch (e) {
+    console.log(`beIN SCRIPT erreur : ${e.message}`);
+  }
+} 
     const nbaIndex = page.indexOf("NBA");
     const basketIndex = page.indexOf("Basket-ball");
     const displayIndex = page.indexOf('"display_name"');
