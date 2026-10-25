@@ -194,10 +194,10 @@ for (const scriptUrl of scriptUrls.slice(0, 30)) {
 
     const js = await sr.text();
 
-    if (/tv-guide|schedule|epg|program|fixture|event/i.test(js)) {
+    if (/tv-guide|\/api\/|schedule|epg|broadcast|channel|programming/i.test(js)) {
       console.log(`beIN SCRIPT intéressant : ${scriptUrl}`);
 
-      const words = ["tv-guide", "schedule", "epg", "program", "fixture", "event"];
+      const words = ["tv-guide", "/api/", "schedule", "epg", "broadcast", "channel", "programming"];
 
       for (const word of words) {
         const pos = js.toLowerCase().indexOf(word);
