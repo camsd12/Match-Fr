@@ -51,7 +51,9 @@ async function football() {
 }
 
 function nbaLogo(team) {
-  const abbr = team?.abbreviation?.toLowerCase();
+  let abbr = team?.abbreviation?.toLowerCase();
+
+  if (abbr === "uta") abbr = "utah";
 
   return abbr
     ? `https://a.espncdn.com/i/teamlogos/nba/500/${abbr}.png`
