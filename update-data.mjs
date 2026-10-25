@@ -193,6 +193,13 @@ for (const scriptUrl of scriptUrls.slice(0, 30)) {
     if (!sr.ok) continue;
 
     const js = await sr.text();
+    const scheduledPos = js.indexOf("onsScheduledEvents");
+
+if (scheduledPos >= 0) {
+  console.log(`🎯 beIN SCHEDULE TROUVÉ : ${scriptUrl}`);
+  console.log(`🎯 beIN SCHEDULE CODE : ${js.slice(Math.max(0, scheduledPos - 2000), scheduledPos + 4000)}`);
+}
+
 
     if (/tv-guide|\/api\/|schedule|epg|broadcast|channel|programming/i.test(js)) {
       console.log(`beIN SCRIPT intéressant : ${scriptUrl}`);
