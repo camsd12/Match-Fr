@@ -8,8 +8,8 @@
     "homeIcon": "https://crests.football-data.org/108.png",
     "awayIcon": "https://crests.football-data.org/99.png",
     "utc": "2026-10-25T11:30:00Z",
-    "status": "IN_PLAY",
-    "tv": "Diffuseur FR à confirmer",
+    "status": "FINISHED",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -22,7 +22,7 @@
     "awayIcon": "https://crests.football-data.org/82.png",
     "utc": "2026-10-25T13:00:00Z",
     "status": "IN_PLAY",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -35,7 +35,7 @@
     "awayIcon": "https://crests.football-data.org/521.png",
     "utc": "2026-10-25T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -48,7 +48,7 @@
     "awayIcon": "https://crests.football-data.org/397.png",
     "utc": "2026-10-25T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -61,7 +61,7 @@
     "awayIcon": "https://crests.football-data.org/67.png",
     "utc": "2026-10-25T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -74,7 +74,7 @@
     "awayIcon": "https://crests.football-data.org/bournemouth.png",
     "utc": "2026-10-25T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -87,7 +87,7 @@
     "awayIcon": "https://crests.football-data.org/402.png",
     "utc": "2026-10-25T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -100,7 +100,7 @@
     "awayIcon": "https://crests.football-data.org/470.png",
     "utc": "2026-10-25T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -113,7 +113,7 @@
     "awayIcon": "https://crests.football-data.org/454.png",
     "utc": "2026-10-25T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -126,7 +126,7 @@
     "awayIcon": "https://crests.football-data.org/3.png",
     "utc": "2026-10-25T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -139,7 +139,7 @@
     "awayIcon": "https://crests.football-data.org/90.png",
     "utc": "2026-10-25T15:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -152,7 +152,7 @@
     "awayIcon": "https://crests.football-data.org/533.png",
     "utc": "2026-10-25T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -165,7 +165,7 @@
     "awayIcon": "https://crests.football-data.org/576.png",
     "utc": "2026-10-25T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -178,7 +178,7 @@
     "awayIcon": "https://crests.football-data.org/525.png",
     "utc": "2026-10-25T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -191,7 +191,7 @@
     "awayIcon": "https://crests.football-data.org/531.png",
     "utc": "2026-10-25T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -204,7 +204,7 @@
     "awayIcon": "https://crests.football-data.org/535.png",
     "utc": "2026-10-25T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -217,7 +217,7 @@
     "awayIcon": "https://crests.football-data.org/341.png",
     "utc": "2026-10-25T16:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -230,7 +230,7 @@
     "awayIcon": "https://crests.football-data.org/5.png",
     "utc": "2026-10-25T16:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -243,7 +243,7 @@
     "awayIcon": "https://crests.football-data.org/109.png",
     "utc": "2026-10-25T17:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -256,7 +256,7 @@
     "awayIcon": "https://crests.football-data.org/88.png",
     "utc": "2026-10-25T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -269,7 +269,7 @@
     "awayIcon": "https://crests.football-data.org/98.png",
     "utc": "2026-10-25T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -282,7 +282,7 @@
     "awayIcon": "https://crests.football-data.org/86.png",
     "utc": "2026-10-25T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -295,7 +295,7 @@
     "awayIcon": "https://crests.football-data.org/523.png",
     "utc": "2026-10-26T19:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -308,7 +308,7 @@
     "awayIcon": "https://crests.football-data.org/79.png",
     "utc": "2026-10-26T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -321,7 +321,7 @@
     "awayIcon": "https://crests.football-data.org/110.png",
     "utc": "2026-10-27T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -334,7 +334,7 @@
     "awayIcon": "https://crests.football-data.org/104.png",
     "utc": "2026-10-27T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -347,7 +347,7 @@
     "awayIcon": "https://crests.football-data.org/7397.png",
     "utc": "2026-10-27T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -360,7 +360,7 @@
     "awayIcon": "https://crests.football-data.org/103.png",
     "utc": "2026-10-28T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -373,7 +373,7 @@
     "awayIcon": "https://crests.football-data.org/108.png",
     "utc": "2026-10-28T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -386,7 +386,7 @@
     "awayIcon": "https://crests.football-data.org/115.png",
     "utc": "2026-10-28T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -399,7 +399,7 @@
     "awayIcon": "https://crests.football-data.org/109.png",
     "utc": "2026-10-28T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -412,7 +412,7 @@
     "awayIcon": "https://crests.football-data.org/113.png",
     "utc": "2026-10-28T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -425,7 +425,7 @@
     "awayIcon": "https://crests.football-data.org/5890.png",
     "utc": "2026-10-29T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -438,7 +438,7 @@
     "awayIcon": "https://crests.football-data.org/102.png",
     "utc": "2026-10-29T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -451,7 +451,7 @@
     "awayIcon": "https://crests.football-data.org/524.png",
     "utc": "2026-10-30T18:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -464,7 +464,7 @@
     "awayIcon": "https://crests.football-data.org/15.png",
     "utc": "2026-10-30T19:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -477,7 +477,7 @@
     "awayIcon": "https://crests.football-data.org/80.png",
     "utc": "2026-10-30T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -490,7 +490,7 @@
     "awayIcon": "https://crests.football-data.org/546.png",
     "utc": "2026-10-30T20:05:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -503,7 +503,7 @@
     "awayIcon": "https://crests.football-data.org/66.png",
     "utc": "2026-10-31T12:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -516,7 +516,7 @@
     "awayIcon": "https://crests.football-data.org/78.png",
     "utc": "2026-10-31T13:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -529,7 +529,7 @@
     "awayIcon": "https://crests.football-data.org/5911.png",
     "utc": "2026-10-31T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -542,7 +542,7 @@
     "awayIcon": "https://crests.football-data.org/29.png",
     "utc": "2026-10-31T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -555,7 +555,7 @@
     "awayIcon": "https://crests.football-data.org/721.png",
     "utc": "2026-10-31T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -568,7 +568,7 @@
     "awayIcon": "https://crests.football-data.org/17.png",
     "utc": "2026-10-31T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -581,7 +581,7 @@
     "awayIcon": "https://crests.football-data.org/2.png",
     "utc": "2026-10-31T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -594,7 +594,7 @@
     "awayIcon": "https://crests.football-data.org/10.png",
     "utc": "2026-10-31T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -607,7 +607,7 @@
     "awayIcon": "https://crests.football-data.org/397.png",
     "utc": "2026-10-31T15:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -620,7 +620,7 @@
     "awayIcon": "https://crests.football-data.org/341.png",
     "utc": "2026-10-31T15:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -633,7 +633,7 @@
     "awayIcon": "https://crests.football-data.org/71.png",
     "utc": "2026-10-31T15:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -646,7 +646,7 @@
     "awayIcon": "https://crests.football-data.org/349.png",
     "utc": "2026-10-31T15:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -659,7 +659,7 @@
     "awayIcon": "https://crests.football-data.org/351.png",
     "utc": "2026-10-31T15:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -672,7 +672,7 @@
     "awayIcon": "https://crests.football-data.org/558.png",
     "utc": "2026-10-31T15:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -685,7 +685,7 @@
     "awayIcon": "https://crests.football-data.org/529.png",
     "utc": "2026-10-31T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -698,7 +698,7 @@
     "awayIcon": "https://crests.football-data.org/100.png",
     "utc": "2026-10-31T17:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -711,7 +711,7 @@
     "awayIcon": "https://crests.football-data.org/354.png",
     "utc": "2026-10-31T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -724,7 +724,7 @@
     "awayIcon": "https://crests.football-data.org/84.png",
     "utc": "2026-10-31T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -737,7 +737,7 @@
     "awayIcon": "https://crests.football-data.org/4.png",
     "utc": "2026-10-31T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -750,7 +750,7 @@
     "awayIcon": "https://crests.football-data.org/532.png",
     "utc": "2026-10-31T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -763,7 +763,7 @@
     "awayIcon": "https://crests.football-data.org/512.png",
     "utc": "2026-10-31T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -776,7 +776,7 @@
     "awayIcon": "https://crests.football-data.org/535.png",
     "utc": "2026-10-31T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -789,7 +789,7 @@
     "awayIcon": "https://crests.football-data.org/108.png",
     "utc": "2026-10-31T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -802,7 +802,7 @@
     "awayIcon": "https://crests.football-data.org/63.png",
     "utc": "2026-10-31T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -815,7 +815,7 @@
     "awayIcon": "https://crests.football-data.org/263.png",
     "utc": "2026-10-31T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -828,7 +828,7 @@
     "awayIcon": "https://crests.football-data.org/454.png",
     "utc": "2026-11-01T11:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -841,7 +841,7 @@
     "awayIcon": "https://crests.football-data.org/559.png",
     "utc": "2026-11-01T13:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -854,7 +854,7 @@
     "awayIcon": "https://crests.football-data.org/519.png",
     "utc": "2026-11-01T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -867,7 +867,7 @@
     "awayIcon": "https://crests.football-data.org/586.png",
     "utc": "2026-11-01T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -880,7 +880,7 @@
     "awayIcon": "https://crests.football-data.org/104.png",
     "utc": "2026-11-01T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -893,7 +893,7 @@
     "awayIcon": "https://crests.football-data.org/1.png",
     "utc": "2026-11-01T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -906,7 +906,7 @@
     "awayIcon": "https://crests.football-data.org/86.png",
     "utc": "2026-11-01T15:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -919,7 +919,7 @@
     "awayIcon": "https://crests.football-data.org/548.png",
     "utc": "2026-11-01T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -932,7 +932,7 @@
     "awayIcon": "https://crests.football-data.org/57.png",
     "utc": "2026-11-01T16:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -945,7 +945,7 @@
     "awayIcon": "https://crests.football-data.org/7.png",
     "utc": "2026-11-01T16:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -958,7 +958,7 @@
     "awayIcon": "https://crests.football-data.org/107.png",
     "utc": "2026-11-01T17:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -971,7 +971,7 @@
     "awayIcon": "https://crests.football-data.org/95.png",
     "utc": "2026-11-01T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -984,7 +984,7 @@
     "awayIcon": "https://crests.football-data.org/511.png",
     "utc": "2026-11-01T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -997,7 +997,7 @@
     "awayIcon": "https://crests.football-data.org/113.png",
     "utc": "2026-11-01T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1010,7 +1010,7 @@
     "awayIcon": "https://crests.football-data.org/92.png",
     "utc": "2026-11-01T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1023,7 +1023,7 @@
     "awayIcon": "https://crests.football-data.org/99.png",
     "utc": "2026-11-02T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1036,7 +1036,7 @@
     "awayIcon": "https://crests.football-data.org/112.png",
     "utc": "2026-11-02T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1049,7 +1049,7 @@
     "awayIcon": "https://crests.football-data.org/62.png",
     "utc": "2026-11-02T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1062,7 +1062,7 @@
     "awayIcon": "https://crests.football-data.org/79.png",
     "utc": "2026-11-02T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1075,7 +1075,7 @@
     "awayIcon": "https://crests.football-data.org/498.png",
     "utc": "2026-11-03T17:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1088,7 +1088,7 @@
     "awayIcon": "https://crests.football-data.org/10.png",
     "utc": "2026-11-03T17:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1101,7 +1101,7 @@
     "awayIcon": "https://crests.football-data.org/108.png",
     "utc": "2026-11-03T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1114,7 +1114,7 @@
     "awayIcon": "https://crests.football-data.org/58.png",
     "utc": "2026-11-03T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1127,7 +1127,7 @@
     "awayIcon": "https://crests.football-data.org/5.png",
     "utc": "2026-11-03T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1140,7 +1140,7 @@
     "awayIcon": "https://crests.football-data.org/524.png",
     "utc": "2026-11-03T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1153,7 +1153,7 @@
     "awayIcon": "https://crests.football-data.org/100.png",
     "utc": "2026-11-03T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1166,7 +1166,7 @@
     "awayIcon": "https://crests.football-data.org/521.png",
     "utc": "2026-11-03T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1179,7 +1179,7 @@
     "awayIcon": "https://crests.football-data.org/7509.png",
     "utc": "2026-11-03T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1192,7 +1192,7 @@
     "awayIcon": "https://crests.football-data.org/86.png",
     "utc": "2026-11-04T17:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1205,7 +1205,7 @@
     "awayIcon": "https://crests.football-data.org/64.png",
     "utc": "2026-11-04T17:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1218,7 +1218,7 @@
     "awayIcon": "https://crests.football-data.org/65.png",
     "utc": "2026-11-04T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1231,7 +1231,7 @@
     "awayIcon": "https://crests.football-data.org/57.png",
     "utc": "2026-11-04T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1244,7 +1244,7 @@
     "awayIcon": "https://crests.football-data.org/851.png",
     "utc": "2026-11-04T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1257,7 +1257,7 @@
     "awayIcon": "https://crests.football-data.org/90.png",
     "utc": "2026-11-04T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1270,7 +1270,7 @@
     "awayIcon": "https://crests.football-data.org/113.png",
     "utc": "2026-11-04T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1283,7 +1283,7 @@
     "awayIcon": "https://crests.football-data.org/7397.png",
     "utc": "2026-11-04T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1296,7 +1296,7 @@
     "awayIcon": "https://crests.football-data.org/10233.png",
     "utc": "2026-11-04T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1309,7 +1309,7 @@
     "awayIcon": "https://crests.football-data.org/18.png",
     "utc": "2026-11-06T19:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1322,7 +1322,7 @@
     "awayIcon": "https://crests.football-data.org/576.png",
     "utc": "2026-11-06T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1335,7 +1335,7 @@
     "awayIcon": "https://crests.football-data.org/115.png",
     "utc": "2026-11-06T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1348,7 +1348,7 @@
     "awayIcon": "https://crests.football-data.org/1076.png",
     "utc": "2026-11-06T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1361,7 +1361,7 @@
     "awayIcon": "https://crests.football-data.org/263.png",
     "utc": "2026-11-06T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1374,7 +1374,7 @@
     "awayIcon": "https://crests.football-data.org/73.png",
     "utc": "2026-11-07T12:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1387,7 +1387,7 @@
     "awayIcon": "https://crests.football-data.org/5335.png",
     "utc": "2026-11-07T13:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1400,7 +1400,7 @@
     "awayIcon": "https://crests.football-data.org/5890.png",
     "utc": "2026-11-07T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1413,7 +1413,7 @@
     "awayIcon": "https://crests.football-data.org/470.png",
     "utc": "2026-11-07T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1426,7 +1426,7 @@
     "awayIcon": "https://crests.football-data.org/16.png",
     "utc": "2026-11-07T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1439,7 +1439,7 @@
     "awayIcon": "https://crests.football-data.org/719.png",
     "utc": "2026-11-07T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1452,7 +1452,7 @@
     "awayIcon": "https://crests.football-data.org/5.png",
     "utc": "2026-11-07T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1465,7 +1465,7 @@
     "awayIcon": "https://crests.football-data.org/19.png",
     "utc": "2026-11-07T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1478,7 +1478,7 @@
     "awayIcon": "https://crests.football-data.org/322.png",
     "utc": "2026-11-07T15:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1491,7 +1491,7 @@
     "awayIcon": "https://crests.football-data.org/67.png",
     "utc": "2026-11-07T15:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1504,7 +1504,7 @@
     "awayIcon": "https://crests.football-data.org/560.png",
     "utc": "2026-11-07T15:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1517,7 +1517,7 @@
     "awayIcon": "https://crests.football-data.org/1045.png",
     "utc": "2026-11-07T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1530,7 +1530,7 @@
     "awayIcon": "https://crests.football-data.org/103.png",
     "utc": "2026-11-07T17:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1543,7 +1543,7 @@
     "awayIcon": "https://crests.football-data.org/65.png",
     "utc": "2026-11-07T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1556,7 +1556,7 @@
     "awayIcon": "https://crests.football-data.org/77.png",
     "utc": "2026-11-07T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1569,7 +1569,7 @@
     "awayIcon": "https://crests.football-data.org/12.png",
     "utc": "2026-11-07T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1582,7 +1582,7 @@
     "awayIcon": "https://crests.football-data.org/531.png",
     "utc": "2026-11-07T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1595,7 +1595,7 @@
     "awayIcon": "https://crests.football-data.org/471.png",
     "utc": "2026-11-07T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1608,7 +1608,7 @@
     "awayIcon": "https://crests.football-data.org/86.png",
     "utc": "2026-11-07T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1621,7 +1621,7 @@
     "awayIcon": "https://crests.football-data.org/110.png",
     "utc": "2026-11-08T11:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1634,7 +1634,7 @@
     "awayIcon": "https://crests.football-data.org/90.png",
     "utc": "2026-11-08T13:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1647,7 +1647,7 @@
     "awayIcon": "https://crests.football-data.org/521.png",
     "utc": "2026-11-08T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1660,7 +1660,7 @@
     "awayIcon": "https://crests.football-data.org/64.png",
     "utc": "2026-11-08T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1673,7 +1673,7 @@
     "awayIcon": "https://crests.football-data.org/61.png",
     "utc": "2026-11-08T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1686,7 +1686,7 @@
     "awayIcon": "https://crests.football-data.org/bournemouth.png",
     "utc": "2026-11-08T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1699,7 +1699,7 @@
     "awayIcon": "https://crests.football-data.org/402.png",
     "utc": "2026-11-08T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1712,7 +1712,7 @@
     "awayIcon": "https://crests.football-data.org/98.png",
     "utc": "2026-11-08T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1725,7 +1725,7 @@
     "awayIcon": "https://crests.football-data.org/102.png",
     "utc": "2026-11-08T14:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1738,7 +1738,7 @@
     "awayIcon": "https://crests.football-data.org/3.png",
     "utc": "2026-11-08T14:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1751,7 +1751,7 @@
     "awayIcon": "https://crests.football-data.org/87.png",
     "utc": "2026-11-08T15:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1764,7 +1764,7 @@
     "awayIcon": "https://crests.football-data.org/548.png",
     "utc": "2026-11-08T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1777,7 +1777,7 @@
     "awayIcon": "https://crests.football-data.org/523.png",
     "utc": "2026-11-08T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1790,7 +1790,7 @@
     "awayIcon": "https://crests.football-data.org/525.png",
     "utc": "2026-11-08T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1803,7 +1803,7 @@
     "awayIcon": "https://crests.football-data.org/522.png",
     "utc": "2026-11-08T16:15:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1816,7 +1816,7 @@
     "awayIcon": "https://crests.football-data.org/58.png",
     "utc": "2026-11-08T16:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "CANAL+",
     "source": "football-data.org"
   },
   {
@@ -1829,7 +1829,7 @@
     "awayIcon": "https://crests.football-data.org/28.png",
     "utc": "2026-11-08T16:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1842,7 +1842,7 @@
     "awayIcon": "https://crests.football-data.org/7397.png",
     "utc": "2026-11-08T17:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1855,7 +1855,7 @@
     "awayIcon": "https://crests.football-data.org/88.png",
     "utc": "2026-11-08T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1868,7 +1868,7 @@
     "awayIcon": "https://crests.football-data.org/82.png",
     "utc": "2026-11-08T17:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
   {
@@ -1881,7 +1881,7 @@
     "awayIcon": "https://crests.football-data.org/6.png",
     "utc": "2026-11-08T18:30:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
   {
@@ -1894,7 +1894,7 @@
     "awayIcon": "https://crests.football-data.org/516.png",
     "utc": "2026-11-08T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "Ligue 1+",
     "source": "football-data.org"
   },
   {
@@ -1907,7 +1907,7 @@
     "awayIcon": "https://crests.football-data.org/109.png",
     "utc": "2026-11-08T19:45:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN",
     "source": "football-data.org"
   },
   {
@@ -1920,7 +1920,7 @@
     "awayIcon": "https://crests.football-data.org/81.png",
     "utc": "2026-11-08T20:00:00Z",
     "status": "TIMED",
-    "tv": "Diffuseur FR à confirmer",
+    "tv": "DAZN / Disney+",
     "source": "football-data.org"
   }
 ]
