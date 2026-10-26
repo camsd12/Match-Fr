@@ -137,6 +137,14 @@ async function addBeinBroadcasters() {
     for (const match of nbaMatches) {
       const home = normalizeTeamName(match.home);
       const away = normalizeTeamName(match.away);
+      const matchDate = new Date(match.utc);
+      const matchDay = matchDate.toLocaleDateString("fr-FR", {
+       timeZone: "Europe/Paris",
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+});
+      const day = normalizeTeamName(matchDay);
       const page = normalizeTeamName(html);
 
       const homePos = page.indexOf(home);
@@ -152,7 +160,7 @@ async function addBeinBroadcasters() {
 
       const zone = page.slice(start, end);
 
-      if (zone.includes("beinsports")) {
+      if (zone.includes("beinsports") && zone.includes(day)) {
         match.tv = "beIN SPORTS • NBA League Pass";
         console.log(`📺 beIN confirmé : ${match.home} - ${match.away}`);
       }
