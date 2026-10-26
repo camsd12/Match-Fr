@@ -1,4 +1,4 @@
-et matches = [];
+let matches = [];
 let mode = "Foot";
 
 const fmtDate = new Intl.DateTimeFormat("fr-FR", {
