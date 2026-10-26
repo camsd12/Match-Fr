@@ -196,6 +196,7 @@ for (const scriptUrl of scriptUrls.slice(0, 30)) {
     
 
 const lowerJs = js.toLowerCase();
+    if (!lowerJs.includes("onscheduledevents")) continue;
 
 for (const match of out) {
   if (match.sport !== "NBA") continue;
