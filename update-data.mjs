@@ -152,10 +152,10 @@ async function addBeinBroadcasters() {
 
       if (homePos === -1 || awayPos === -1) continue;
 
-      const start = Math.max(0, Math.min(homePos, awayPos) - 1000);
+      const start = Math.max(0, Math.min(homePos, awayPos) - 5000);
       const end = Math.min(
         page.length,
-        Math.max(homePos, awayPos) + 1000
+        Math.max(homePos, awayPos) + 5000
       );
 
       const zone = page.slice(start, end);
