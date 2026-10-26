@@ -135,20 +135,42 @@ async function addBeinBroadcasters() {
 
     const html = await guide.text();
 
-    // Cherche les identifiants des chaînes beIN présents dans la page.
-    const channelIds = [
-      ...new Set(
-        [...html.matchAll(/channelIds?["'=:\\]+([A-Fa-f0-9-]{36})/g)]
-          .map(m => m[1])
-      )
-    ];
+   // Récupère les identifiants UUID présents autour des chaînes beIN.
+const channelIds = [];
 
-    console.log(`beIN : ${channelIds.length} chaîne(s) trouvée(s)`);
+const uuidRegex =
+  /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi;
 
-    if (!channelIds.length) {
-      console.warn("beIN : aucun identifiant de chaîne trouvé");
-      return;
-    }
+const uuidMatches = [...html.matchAll(uuidRegex)];
+
+for (const m of uuidMatches) {
+  const id = m[0];
+
+  const pos = m.index ?? 0;
+  const startZone = Math.max(0, pos - 500);
+  const endZone = Math.min(html.length, pos + 500);
+
+  const zone = html.slice(startZone, endZone).toLowerCase();
+
+  if (
+    zone.includes("bein sports") ||
+    zone.includes("bein_sports") ||
+    zone.includes("beinsports")
+  ) {
+    channelIds.push(id);
+  }
+}
+
+const uniqueChannelIds = [...new Set(channelIds)];
+
+console.log(
+  `beIN : ${uniqueChannelIds.length} identifiant(s) de chaîne trouvé(s)`
+);
+
+if (!uniqueChannelIds.length) {
+  console.warn("beIN : aucun identifiant de chaîne trouvé");
+  return;
+}
 
     // Même période que les matchs déjà récupérés par Match FR.
     const nbaMatches = out.filter(m => m.sport === "NBA");
@@ -177,7 +199,7 @@ async function addBeinBroadcasters() {
     params.set("endAfter", start.toISOString());
     params.set("limit", "3000");
 
-    for (const id of channelIds) {
+    for (const id of uniqueChannelIds) {
       params.append("channelIds", id);
     }
 
