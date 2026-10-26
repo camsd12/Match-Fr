@@ -181,12 +181,14 @@ if (!uniqueChannelIds.length) {
       .map(m => new Date(m.utc))
       .filter(d => !Number.isNaN(d.valueOf()));
 
-    const start = new Date(Math.min(...dates.map(d => d.valueOf())));
-    const end = new Date(Math.max(...dates.map(d => d.valueOf())));
+   const now = new Date();
+    
+const start = new Date(now);
+start.setDate(start.getDate() - 1);
+start.setHours(23, 0, 0, 0);
 
-    // Petite marge autour de la période.
-    start.setHours(start.getHours() - 12);
-    end.setHours(end.getHours() + 12);
+const end = new Date(now);
+end.setHours(22, 59, 59, 999);
 
     const params = new URLSearchParams();
 
