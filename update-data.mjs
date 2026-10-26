@@ -124,167 +124,43 @@ function normalizeTeamName(name) {
 }
 async function addBeinBroadcasters() {
   try {
-    // On récupère d'abord le guide beIN pour obtenir
-    // automatiquement l'URL actuelle de l'API TV.
-    const guide = await fetch("https://www.beinsports.com/fr-fr/tv-guide");
+    const response = await fetch("https://tv-sports.fr/basket/nba");
 
-    if (!guide.ok) {
-      console.warn(`beIN guide : HTTP ${guide.status}`);
+    if (!response.ok) {
+      console.warn(`TV-Sports : HTTP ${response.status}`);
       return;
     }
 
-    const html = await guide.text();
-
-   // Récupère les identifiants UUID présents autour des chaînes beIN.
-const channelIds = [];
-
-const uuidRegex =
-  /[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}/gi;
-
-const uuidMatches = [...html.matchAll(uuidRegex)];
-
-for (const m of uuidMatches) {
-  const id = m[0];
-
-  const pos = m.index ?? 0;
-  const startZone = Math.max(0, pos - 500);
-  const endZone = Math.min(html.length, pos + 500);
-
-  const zone = html.slice(startZone, endZone).toLowerCase();
-
-  if (
-    zone.includes("bein sports") ||
-    zone.includes("bein_sports") ||
-    zone.includes("beinsports")
-  ) {
-    channelIds.push(id);
-  }
-}
-
-const uniqueChannelIds = [...new Set(channelIds)];
-
-console.log(
-  `beIN : ${uniqueChannelIds.length} identifiant(s) de chaîne trouvé(s)`
-);
-
-if (!uniqueChannelIds.length) {
-  console.warn("beIN : aucun identifiant de chaîne trouvé");
-  return;
-}
-
-    // Même période que les matchs déjà récupérés par Match FR.
+    const html = await response.text();
     const nbaMatches = out.filter(m => m.sport === "NBA");
-
-    if (!nbaMatches.length) return;
-
-    const dates = nbaMatches
-      .map(m => new Date(m.utc))
-      .filter(d => !Number.isNaN(d.valueOf()));
-
-   const now = new Date();
-    
-const start = new Date(now);
-start.setDate(start.getDate() - 1);
-start.setHours(23, 0, 0, 0);
-
-const end = new Date(now);
-end.setHours(22, 59, 59, 999);
-
-    const params = new URLSearchParams();
-
-    params.set(
-      "sportTypeId",
-      "1DDBCE01-E204-49F7-9153-933B230CC217"
-    );
-
-    params.set("startBefore", end.toISOString());
-    params.set("endAfter", start.toISOString());
-    params.set("limit", "3000");
-
-    for (const id of uniqueChannelIds) {
-      params.append("channelIds", id);
-    }
-
-    const apiUrl =
-      `https://www.beinsports.com/api/opta/tv-event?${params.toString()}`;
-
-    const r = await fetch(apiUrl);
-
-    if (!r.ok) {
-  const errorText = await r.text();
-
-  console.warn(`beIN API : HTTP ${r.status}`);
-  console.warn(`beIN API URL : ${apiUrl}`);
-  console.warn(`beIN API réponse : ${errorText}`);
-
-  return;
-}
-
-    const data = await r.json();
-
-    // On transforme tout le JSON en texte normalisé.
-    // Les équipes doivent apparaître dans LE MÊME événement.
-    const events = Array.isArray(data)
-      ? data
-      : data?.data ||
-        data?.items ||
-        data?.events ||
-        data?.results ||
-        [];
-
-    console.log(`beIN : ${events.length} événement(s) reçu(s)`);
 
     for (const match of nbaMatches) {
       const home = normalizeTeamName(match.home);
       const away = normalizeTeamName(match.away);
+      const page = normalizeTeamName(html);
 
-      if (!home || !away) continue;
+      const homePos = page.indexOf(home);
+      const awayPos = page.indexOf(away);
 
-      const matchTime = new Date(match.utc).getTime();
+      if (homePos === -1 || awayPos === -1) continue;
 
-      const found = events.some(event => {
-        const text = normalizeTeamName(JSON.stringify(event));
+      const start = Math.max(0, Math.min(homePos, awayPos) - 1000);
+      const end = Math.min(
+        page.length,
+        Math.max(homePos, awayPos) + 1000
+      );
 
-        if (!text.includes(home) || !text.includes(away)) {
-          return false;
-        }
+      const zone = page.slice(start, end);
 
-        // Si une date beIN est trouvée, elle doit correspondre
-        // au match NBA à quelques heures près.
-        const dateCandidates = [
-          event?.startDate,
-          event?.startTime,
-          event?.start,
-          event?.date,
-          event?.scheduledStart
-        ].filter(Boolean);
-
-        if (!dateCandidates.length) {
-          return true;
-        }
-
-        return dateCandidates.some(value => {
-          const t = new Date(value).getTime();
-          return (
-            !Number.isNaN(t) &&
-            Math.abs(t - matchTime) <= 6 * 60 * 60 * 1000
-          );
-        });
-      });
-
-      if (found) {
+      if (zone.includes("beinsports")) {
         match.tv = "beIN SPORTS • NBA League Pass";
-
-        console.log(
-          `📺 beIN confirmé : ${match.home} - ${match.away}`
-        );
+        console.log(`📺 beIN confirmé : ${match.home} - ${match.away}`);
       }
     }
   } catch (e) {
-    console.warn("beIN API :", e.message);
+    console.warn("TV-Sports :", e.message);
   }
 }
-
 await Promise.all([football(),nba()]);
 await addBeinBroadcasters();
 out.sort((a,b)=>new Date(a.utc)-new Date(b.utc));
