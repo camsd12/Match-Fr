@@ -124,6 +124,8 @@ function normalizeTeamName(name) {
 }
 async function addBeinBroadcasters() {
   try {
+    console.log("📺 Vérification des diffusions NBA sur beIN...");
+
     const response = await fetch("https://tv-sports.fr/basket/nba");
 
     if (!response.ok) {
@@ -134,40 +136,100 @@ async function addBeinBroadcasters() {
     const html = await response.text();
     const nbaMatches = out.filter(m => m.sport === "NBA");
 
+    // Nettoyage du HTML pour faciliter la recherche.
+    const page = normalizeTeamName(
+      html
+        .replace(/<script[\s\S]*?<\/script>/gi, " ")
+        .replace(/<style[\s\S]*?<\/style>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+    );
+
+    // Noms utilisés par les sites TV lorsqu'ils sont différents
+    // des noms complets BALLDONTLIE.
+    const aliases = {
+      "philadelphia76ers": ["philadelphia76ers", "philadelphia", "76ers"],
+      "portlandtrailblazers": ["portlandtrailblazers", "portland", "trailblazers"],
+      "losangelesclippers": ["losangelesclippers", "laclippers", "clippers"],
+      "losangeleslakers": ["losangeleslakers", "lalakers", "lakers"],
+      "oklahomacitythunder": ["oklahomacitythunder", "oklahomacity", "thunder"],
+      "goldenstatewarriors": ["goldenstatewarriors", "goldenstate", "warriors"],
+      "newyorkknicks": ["newyorkknicks", "newyork", "knicks"],
+      "sanantoniospurs": ["sanantoniospurs", "sanantonio", "spurs"]
+    };
+
+    function teamNames(name) {
+      const normalized = normalizeTeamName(name);
+      return aliases[normalized] || [normalized];
+    }
+
+    function findPositions(text, names) {
+      const positions = [];
+
+      for (const name of names) {
+        if (!name || name.length < 4) continue;
+
+        let pos = text.indexOf(name);
+
+        while (pos !== -1) {
+          positions.push(pos);
+          pos = text.indexOf(name, pos + name.length);
+        }
+      }
+
+      return positions;
+    }
+
     for (const match of nbaMatches) {
-      const home = normalizeTeamName(match.home);
-      const away = normalizeTeamName(match.away);
-      const matchDate = new Date(match.utc);
-      const matchDay = matchDate.toLocaleDateString("fr-FR", {
-       timeZone: "Europe/Paris",
-  day: "numeric",
-  month: "long",
-  year: "numeric"
-});
-      const day = normalizeTeamName(matchDay);
-      const page = normalizeTeamName(html);
+      const homeNames = teamNames(match.home);
+      const awayNames = teamNames(match.away);
 
-      const homePos = page.indexOf(home);
-      const awayPos = page.indexOf(away);
+      const homePositions = findPositions(page, homeNames);
+      const awayPositions = findPositions(page, awayNames);
 
-      if (homePos === -1 || awayPos === -1) continue;
+      let confirmed = false;
 
-      const start = Math.max(0, Math.min(homePos, awayPos) - 5000);
-      const end = Math.min(
-        page.length,
-        Math.max(homePos, awayPos) + 5000
-      );
+      // Les deux équipes doivent apparaître très proches l'une
+      // de l'autre. On ne cherche plus dans une énorme zone.
+      for (const homePos of homePositions) {
+        for (const awayPos of awayPositions) {
+          if (Math.abs(homePos - awayPos) > 600) continue;
 
-      const zone = page.slice(start, end);
-        console.log("🔎 DATE MATCH :", matchDay);
-  console.log("🔎 DATE RECHERCHEE :", day);
-  console.log("🔎 ZONE TV-SPORTS :", zone);
+          const start = Math.max(
+            0,
+            Math.min(homePos, awayPos) - 300
+          );
 
-      if (zone.includes("beinsports")) {
+          const end = Math.min(
+            page.length,
+            Math.max(homePos, awayPos) + 500
+          );
+
+          const zone = page.slice(start, end);
+
+          // beIN doit être indiqué dans CE MÊME bloc.
+          if (
+            zone.includes("beinsports") ||
+            zone.includes("bein1") ||
+            zone.includes("bein2") ||
+            zone.includes("bein3")
+          ) {
+            confirmed = true;
+            break;
+          }
+        }
+
+        if (confirmed) break;
+      }
+
+      if (confirmed) {
         match.tv = "beIN SPORTS • NBA League Pass";
-        console.log(`📺 beIN confirmé : ${match.home} - ${match.away}`);
+        console.log(
+          `📺 beIN confirmé : ${match.home} - ${match.away}`
+        );
       }
     }
+
+    console.log("📺 Vérification beIN terminée");
   } catch (e) {
     console.warn("TV-Sports :", e.message);
   }
