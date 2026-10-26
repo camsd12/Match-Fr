@@ -136,7 +136,7 @@ async function addBeinBroadcasters() {
     }
 
     const html = await response.text();
-    onsole.log("🔎 DIAG TV-Sports : taille =", html.length);
+    console.log("🔎 DIAG TV-Sports : taille =", html.length);
 
 const motsTest = [
   "beIN SPORTS",
