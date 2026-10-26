@@ -136,6 +136,33 @@ async function addBeinBroadcasters() {
     }
 
     const html = await response.text();
+    onsole.log("🔎 DIAG TV-Sports : taille =", html.length);
+
+const motsTest = [
+  "beIN SPORTS",
+  "Denver Nuggets",
+  "Golden State Warriors",
+  "Direct"
+];
+
+for (const mot of motsTest) {
+  const position = html
+    .toLowerCase()
+    .indexOf(mot.toLowerCase());
+
+  console.log(`🔎 DIAG "${mot}" = ${position}`);
+
+  if (position !== -1) {
+    const extrait = html
+      .slice(
+        Math.max(0, position - 300),
+        position + 700
+      )
+      .replace(/\s+/g, " ");
+
+    console.log(`🔎 EXTRAIT "${mot}" : ${extrait}`);
+  }
+}
 
     // Convertit le HTML en texte lisible
     const text = html
