@@ -5,7 +5,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 function badge(x,fallback){return x&&/^https?:/.test(x)?`<span class="badge"><img class="crest" src="${esc(x)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span style="display:none">${esc(fallback||'🏀')}</span></span>`:`<span class="badge">${esc(x||fallback||'🏀')}</span>`}
 function render(){
  const root=document.querySelector('#matches'); root.innerHTML=''; const groups={};
- matches.filter(x=>filter==='all'||x.sport===filter).forEach(x=>{const d=fmtD.format(new Date(x.utc));(groups[d]??=[]).push(x)});
+matches.filter(x => x.sport !== 'NBA' && (filter === 'all' || x.sport === filter)).forEach(x => {
  if(!Object.keys(groups).length){root.innerHTML='<div class="empty">Aucun match trouvé pour ce filtre dans les 14 prochains jours.</div>';return}
  for(const [day,items] of Object.entries(groups)){
   root.insertAdjacentHTML('beforeend',`<h3 class="day">${esc(day)}</h3>`);
@@ -26,15 +26,3 @@ document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.que
 document.querySelector('#refresh').onclick=load;
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');
 load(); setInterval(load,300000);
-setTimeout(() => {
-  const programmes = document.querySelectorAll(".schedule-program");
-
-  console.log("🔎 TV-Sports détectés :", programmes.length);
-
-  programmes.forEach((programme, index) => {
-    console.log(
-      `📺 TV ${index + 1}:`,
-      programme.innerText.replace(/\s+/g, " ").trim()
-    );
-  });
-}, 5000);
