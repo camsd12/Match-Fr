@@ -2,77 +2,149 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
   <meta name="theme-color" content="#070b17">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
   <meta name="apple-mobile-web-app-title" content="Match FR">
 
   <title>Match FR</title>
 
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icon-192.png">
-  <link rel="stylesheet" href="./style.css?v=4">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-<header>
-  <h1>Match FR</h1>
-  <button id="refresh">↻</button>
-</header>
+  <header>
+    <h1>Match FR</h1>
 
-<div class="tabs">
-  <button id="footBtn" class="active">⚽ Foot</button>
-  <button id="nbaBtn">🏀 NBA</button>
-</div>
+    <button id="refresh" type="button" aria-label="Actualiser">
+      ↻
+    </button>
+  </header>
 
-<main>
+  <!-- LES 2 SEULS BOUTONS -->
+  <div class="tabs">
+    <button
+      id="footBtn"
+      class="active"
+      type="button"
+    >
+      ⚽ Foot
+    </button>
 
-  <section class="hero">
-    <small>PROGRAMME SPORTIF</small>
-    <h2>Les matchs à l'heure française 🇫🇷</h2>
-    <p>Calendrier et diffuseurs • mise à jour automatique</p>
-  </section>
+    <button
+      id="nbaBtn"
+      type="button"
+    >
+      🏀 NBA
+    </button>
+  </div>
 
+
+  <!-- ========================= -->
   <!-- FOOT -->
+  <!-- ========================= -->
+
   <section id="foot-section">
-    <div class="status">
+
+    <section class="hero">
+      <small>PROGRAMME SPORTIF</small>
+
+      <h2>
+        Les matchs à l'heure française 🇫🇷
+      </h2>
+
+      <p>
+        Calendrier et diffuseurs • mise à jour automatique
+      </p>
+    </section>
+
+    <section class="status">
       <span class="dot"></span>
       <span id="updated">Chargement...</span>
+    </section>
+
+    <main id="matches"></main>
+
+  </section>
+
+
+  <!-- ========================= -->
+  <!-- NBA -->
+  <!-- ========================= -->
+
+  <section id="nba-section" style="display:none;">
+
+    <section class="hero">
+      <small>PROGRAMME TV NBA</small>
+
+      <h2>
+        🏀 NBA en France 🇫🇷
+      </h2>
+
+      <p>
+        Horaires français et chaînes TV
+      </p>
+    </section>
+
+    <div class="nba-tv-container">
+
+      <a
+        class="tvsports-widget"
+        href="https://tv-sports.fr/basket/nba"
+        data-widget="programme"
+        data-target-type="competition"
+        data-target-id="149"
+        data-direct-only="0"
+        data-limit="20"
+        data-theme="dark"
+      >
+        Programme TV NBA
+      </a>
+
     </div>
 
-    <section id="matches"></section>
   </section>
 
-  <!-- NBA -->
-  <section id="nba-section" style="visibility:hidden; position:absolute; left:-9999px;">
-    <h2>📺 Programme TV NBA</h2>
 
-    <a
-      class="tvsports-widget"
-      href="https://tv-sports.fr/basket/nba"
-      data-widget="programme"
-      data-target-type="competition"
-      data-target-id="149"
-      data-direct-only="0"
-      data-limit="20"
-      data-theme="dark">
-      Programme TV NBA
-    </a>
-  </section>
+  <nav>
+    <span>
+      <small>🏠</small>
+      Aujourd'hui
+    </span>
 
-</main>
+    <span>
+      <small>🏆</small>
+      Compétitions
+    </span>
 
-<nav>
-  <span>🏠<small>Aujourd'hui</small></span>
-  <span>🏆<small>Compétitions</small></span>
-  <span>⭐<small>Favoris</small></span>
-</nav>
+    <span>
+      <small>⭐</small>
+      Favoris
+    </span>
+  </nav>
 
-<script async src="https://tv-sports.fr/widget.js"></script>
-<script src="./app.js?v=4"></script>
+
+  <!-- Widget NBA -->
+  <script
+    async
+    src="https://tv-sports.fr/widget.js">
+  </script>
+
+  <!-- Application Match FR -->
+  <script src="./app.js?v=4"></script>
 
 </body>
 </html>
