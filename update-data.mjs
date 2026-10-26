@@ -196,7 +196,11 @@ for (const scriptUrl of scriptUrls.slice(0, 30)) {
     
 
 const lowerJs = js.toLowerCase();
-    if (!lowerJs.includes("onscheduledevents")) continue;
+
+// On ne travaille que sur le script du vrai planning beIN
+if (!lowerJs.includes("onscheduledevents")) continue;
+
+const compactJs = normalizeTeamName(js);
 
 for (const match of out) {
   if (match.sport !== "NBA") continue;
@@ -206,16 +210,34 @@ for (const match of out) {
 
   if (!home || !away) continue;
 
-  const compactJs = normalizeTeamName(lowerJs);
+  const homePos = compactJs.indexOf(home);
+  const awayPos = compactJs.indexOf(away);
 
-  if (compactJs.includes(home) && compactJs.includes(away)) {
-    if (!match.tv.includes("beIN SPORTS")) {
-      match.tv = `beIN SPORTS • ${match.tv}`;
-    }
+  // Les deux équipes doivent réellement être présentes
+  if (homePos < 0 || awayPos < 0) continue;
 
-    console.log(`📺 beIN confirmé : ${match.home} - ${match.away}`);
+  // Elles doivent être proches l'une de l'autre dans le programme.
+  // Cela évite de mélanger deux matchs différents.
+  const distance = Math.abs(homePos - awayPos);
+
+  if (distance > 1200) continue;
+
+  // Vérification supplémentaire : on doit être dans une zone NBA
+  const start = Math.max(0, Math.min(homePos, awayPos) - 600);
+  const end = Math.max(homePos, awayPos) + 1200;
+  const matchZone = compactJs.slice(start, end);
+
+  if (!matchZone.includes("nba")) continue;
+
+  if (!match.tv.includes("beIN SPORTS")) {
+    match.tv = `beIN SPORTS • ${match.tv}`;
   }
+
+  console.log(
+    `📺 beIN confirmé : ${match.home} - ${match.away}`
+  );
 }
+
 
     if (/tv-guide|\/api\/|schedule|epg|broadcast|channel|programming/i.test(js)) {
       console.log(`beIN SCRIPT intéressant : ${scriptUrl}`);
