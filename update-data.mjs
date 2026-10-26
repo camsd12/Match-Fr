@@ -209,9 +209,14 @@ if (!uniqueChannelIds.length) {
     const r = await fetch(apiUrl);
 
     if (!r.ok) {
-      console.warn(`beIN API : HTTP ${r.status}`);
-      return;
-    }
+  const errorText = await r.text();
+
+  console.warn(`beIN API : HTTP ${r.status}`);
+  console.warn(`beIN API URL : ${apiUrl}`);
+  console.warn(`beIN API réponse : ${errorText}`);
+
+  return;
+}
 
     const data = await r.json();
 
