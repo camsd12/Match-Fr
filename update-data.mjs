@@ -124,9 +124,11 @@ function normalizeTeamName(name) {
 }
 async function addBeinBroadcasters() {
   try {
-    console.log("📺 Vérification NBA beIN : J à J+2...");
+    console.log("📺 Lecture des matchs NBA en direct sur TV-Sports...");
 
-    const response = await fetch("https://tv-sports.fr/basket/nba");
+    const response = await fetch(
+      "https://tv-sports.fr/basket/match-direct"
+    );
 
     if (!response.ok) {
       console.warn(`TV-Sports : HTTP ${response.status}`);
@@ -135,26 +137,31 @@ async function addBeinBroadcasters() {
 
     const html = await response.text();
 
-    // Transforme le HTML en texte tout en gardant des séparations.
+    // Convertit le HTML en texte lisible
     const text = html
       .replace(/<script[\s\S]*?<\/script>/gi, " ")
       .replace(/<style[\s\S]*?<\/style>/gi, " ")
-      .replace(/<\/?(?:h1|h2|h3|li|div|p|article|section|br)[^>]*>/gi, "\n")
       .replace(/<[^>]+>/g, " ")
       .replace(/&nbsp;/gi, " ")
       .replace(/&amp;/gi, "&")
       .replace(/&#39;/gi, "'")
       .replace(/&quot;/gi, '"')
-      .replace(/[ \t]+/g, " ")
-      .replace(/\n+/g, "\n");
+      .replace(/\s+/g, " ")
+      .trim();
 
-    const nbaMatches = out.filter(m => m.sport === "NBA");
+    function normalise(value) {
+      return String(value || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]/g, "");
+    }
 
-    // --------------------------------------------------
-    // Dates J, J+1 et J+2 en heure française
-    // --------------------------------------------------
+    // Texte normalisé de toute la page
+    const page = normalise(text);
 
-    function parisDateKey(date) {
+    // Date française YYYY-MM-DD
+    function frenchDate(date) {
       const parts = new Intl.DateTimeFormat("fr-CA", {
         timeZone: "Europe/Paris",
         year: "numeric",
@@ -162,27 +169,17 @@ async function addBeinBroadcasters() {
         day: "2-digit"
       }).formatToParts(date);
 
-      const year = parts.find(p => p.type === "year")?.value;
-      const month = parts.find(p => p.type === "month")?.value;
-      const day = parts.find(p => p.type === "day")?.value;
+      const y = parts.find(p => p.type === "year").value;
+      const m = parts.find(p => p.type === "month").value;
+      const d = parts.find(p => p.type === "day").value;
 
-      return `${year}-${month}-${day}`;
+      return `${y}-${m}-${d}`;
     }
 
-    function parisDateLabel(date) {
-      return new Intl.DateTimeFormat("fr-FR", {
-        timeZone: "Europe/Paris",
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      }).format(date);
-    }
-
+    // J / J+1 / J+2
     const now = new Date();
 
-    // On construit les trois dates à partir de midi pour
-    // éviter les problèmes liés au changement d'heure.
-    const todayParts = new Intl.DateTimeFormat("en-CA", {
+    const parisToday = new Intl.DateTimeFormat("en-CA", {
       timeZone: "Europe/Paris",
       year: "numeric",
       month: "2-digit",
@@ -190,332 +187,130 @@ async function addBeinBroadcasters() {
     }).formatToParts(now);
 
     const year = Number(
-      todayParts.find(p => p.type === "year")?.value
+      parisToday.find(p => p.type === "year").value
     );
 
     const month = Number(
-      todayParts.find(p => p.type === "month")?.value
+      parisToday.find(p => p.type === "month").value
     );
 
     const day = Number(
-      todayParts.find(p => p.type === "day")?.value
+      parisToday.find(p => p.type === "day").value
     );
 
-    const days = [];
+    const allowedDays = new Set();
 
     for (let offset = 0; offset <= 2; offset++) {
       const d = new Date(
-        Date.UTC(year, month - 1, day + offset, 12, 0, 0)
+        Date.UTC(year, month - 1, day + offset, 12)
       );
 
-      days.push({
-        key: parisDateKey(d),
-        label: parisDateLabel(d)
-      });
+      allowedDays.add(frenchDate(d));
     }
 
     console.log(
-      `📅 Journées contrôlées : ${days
-        .map(d => d.label)
-        .join(" | ")}`
+      "📅 Journées contrôlées :",
+      [...allowedDays].join(" / ")
     );
 
-    // --------------------------------------------------
-    // Normalisation des noms d'équipes
-    // --------------------------------------------------
+    let confirmed = 0;
 
-    function normal(name) {
-      return String(name || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9]/g, "");
-    }
-
-    const aliases = {
-      laclippers: "losangelesclippers",
-      losangelesclippers: "losangelesclippers",
-
-      portlandtrailblazers: "portlandtrailblazers",
-
-      philadelphia76ers: "philadelphia76ers",
-
-      oklahomacitythunder: "oklahomacitythunder",
-
-      goldenstatewarriors: "goldenstatewarriors",
-
-      newyorkknicks: "newyorkknicks",
-
-      sanantoniospurs: "sanantoniospurs"
-    };
-
-    function teamKey(name) {
-      const key = normal(name);
-      return aliases[key] || key;
-    }
-
-    // --------------------------------------------------
-    // Découpage de la page par journée
-    // --------------------------------------------------
-
-    const monthNames =
-      "janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre";
-
-    const dateRegex = new RegExp(
-      `(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\\s+` +
-      `(\\d{1,2})\\s+(${monthNames})\\s+(\\d{4})`,
-      "gi"
+    const nbaMatches = out.filter(
+      match => match.sport === "NBA"
     );
 
-    const headers = [];
-    let dateMatch;
+    for (const match of nbaMatches) {
 
-    while ((dateMatch = dateRegex.exec(text)) !== null) {
-      headers.push({
-        index: dateMatch.index,
-        label: dateMatch[0]
-      });
-    }
+      const date = new Date(match.utc);
 
-    let confirmedCount = 0;
-
-    // --------------------------------------------------
-    // Analyse uniquement J, J+1 et J+2
-    // --------------------------------------------------
-
-    for (let i = 0; i < headers.length; i++) {
-      const header = headers[i];
-
-      const nextIndex =
-        i + 1 < headers.length
-          ? headers[i + 1].index
-          : text.length;
-
-      const dayBlock = text.slice(
-        header.index,
-        nextIndex
-      );
-
-      const headerDate = header.label.match(
-        /(\d{1,2})\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(\d{4})/i
-      );
-
-      if (!headerDate) continue;
-
-      const monthMap = {
-        janvier: 1,
-        février: 2,
-        mars: 3,
-        avril: 4,
-        mai: 5,
-        juin: 6,
-        juillet: 7,
-        août: 8,
-        septembre: 9,
-        octobre: 10,
-        novembre: 11,
-        décembre: 12
-      };
-
-      const dd = String(Number(headerDate[1])).padStart(2, "0");
-      const mm = String(
-        monthMap[headerDate[2].toLowerCase()]
-      ).padStart(2, "0");
-
-      const yyyy = headerDate[3];
-
-      const dayKey = `${yyyy}-${mm}-${dd}`;
-
-      // On ignore tout ce qui n'est pas J, J+1 ou J+2.
-      if (!days.some(d => d.key === dayKey)) {
+      if (Number.isNaN(date.valueOf())) {
         continue;
       }
 
-      console.log(`📅 Analyse TV : ${dayKey}`);
-
-      // ------------------------------------------------
-      // Chaque émission commence par une heure suivie
-      // de Direct ou Rediffusion.
-      // ------------------------------------------------
-
-      const eventRegex =
-        /(\d{1,2})h(\d{2})\s+(Direct|Rediffusion(?:\s+Rediff\.)?)/gi;
-
-      const events = [];
-      let eventMatch;
-
-      while ((eventMatch = eventRegex.exec(dayBlock)) !== null) {
-        events.push({
-          index: eventMatch.index,
-          hour: Number(eventMatch[1]),
-          minute: Number(eventMatch[2]),
-          type: eventMatch[3]
-        });
+      // Seulement J à J+2
+      if (!allowedDays.has(frenchDate(date))) {
+        continue;
       }
 
-      for (let e = 0; e < events.length; e++) {
-        const event = events[e];
+      const home = normalise(match.home);
+      const away = normalise(match.away);
 
-        const eventEnd =
-          e + 1 < events.length
-            ? events[e + 1].index
-            : dayBlock.length;
+      if (!home || !away) {
+        continue;
+      }
 
-        const eventBlock = dayBlock.slice(
-          event.index,
-          eventEnd
+      /*
+       * On cherche les deux équipes proches l'une
+       * de l'autre dans la page TV-Sports.
+       */
+
+      let homePosition = page.indexOf(home);
+
+      while (homePosition !== -1) {
+
+        const start = Math.max(
+          0,
+          homePosition - 500
         );
 
-        // ----------------------------------------------
-        // RÈGLE IMPORTANTE :
-        // uniquement les DIRECTS.
-        // ----------------------------------------------
-
-        if (!/^Direct$/i.test(event.type.trim())) {
-          continue;
-        }
-
-        // NBA uniquement.
-        if (!/\bNBA\b/i.test(eventBlock)) {
-          continue;
-        }
-
-        // beIN uniquement.
-        const channelMatch = eventBlock.match(
-          /beIN SPORTS(?:\s+MAX)?(?:\s+\d+)?/i
+        const end = Math.min(
+          page.length,
+          homePosition + home.length + away.length + 1000
         );
 
-        if (!channelMatch) {
-          continue;
-        }
+        const zone = page.slice(start, end);
 
-        const channel = channelMatch[0]
-          .replace(/\s+/g, " ")
-          .trim();
+        const hasAway =
+          zone.includes(away);
 
-        // ----------------------------------------------
-        // Trouve l'affiche située dans ce bloc.
-        // ----------------------------------------------
+        const hasNBA =
+          zone.includes("nba");
 
-        const lines = eventBlock
-          .split("\n")
-          .map(line => line.trim())
-          .filter(Boolean);
+        const hasDirect =
+          zone.includes("direct");
 
-        const matchupLine = lines.find(line =>
-          /[–-]/.test(line) &&
-          !/beIN SPORTS/i.test(line)
+        const beinMatch = zone.match(
+          /beinsports(?:max)?(?:[0-9]+)?/
         );
 
-        if (!matchupLine) {
-          continue;
-        }
+        if (
+          hasAway &&
+          hasNBA &&
+          hasDirect &&
+          beinMatch
+        ) {
 
-        const teams = matchupLine.split(/\s+[–-]\s+/);
+          let channel = beinMatch[0];
 
-        if (teams.length !== 2) {
-          continue;
-        }
+          // Transforme le texte normalisé
+          // en nom propre de chaîne.
 
-        const tvHome = teams[0].trim();
-        const tvAway = teams[1].trim();
+          channel = channel
+            .replace("beinsportsmax", "beIN SPORTS MAX ")
+            .replace("beinsports", "beIN SPORTS ");
 
-        const tvHomeKey = teamKey(tvHome);
-        const tvAwayKey = teamKey(tvAway);
-
-        // ----------------------------------------------
-        // Cherche le même match dans Match FR.
-        // ----------------------------------------------
-
-        for (const match of nbaMatches) {
-          const matchDate = new Date(match.utc);
-
-          if (Number.isNaN(matchDate.valueOf())) {
-            continue;
-          }
-
-          // Le match doit appartenir à la même journée
-          // française 00:00 -> 00:00.
-          if (parisDateKey(matchDate) !== dayKey) {
-            continue;
-          }
-
-          const appHome = teamKey(match.home);
-          const appAway = teamKey(match.away);
-
-          const sameOrder =
-            appHome === tvHomeKey &&
-            appAway === tvAwayKey;
-
-          const reverseOrder =
-            appHome === tvAwayKey &&
-            appAway === tvHomeKey;
-
-          if (!sameOrder && !reverseOrder) {
-            continue;
-          }
-
-          // --------------------------------------------
-          // Vérification de l'heure française.
-          // --------------------------------------------
-
-          const timeParts = new Intl.DateTimeFormat(
-            "fr-FR",
-            {
-              timeZone: "Europe/Paris",
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false
-            }
-          ).formatToParts(matchDate);
-
-          const appHour = Number(
-            timeParts.find(p => p.type === "hour")?.value
-          );
-
-          const appMinute = Number(
-            timeParts.find(p => p.type === "minute")?.value
-          );
-
-          const appTotal =
-            appHour * 60 + appMinute;
-
-          const tvTotal =
-            event.hour * 60 + event.minute;
-
-          const difference =
-            Math.abs(appTotal - tvTotal);
-
-          // Tolérance maximale : 30 minutes.
-          if (difference > 30) {
-            console.log(
-              `⚠️ Match trouvé mais heure différente : ${match.home} - ${match.away}`
-            );
-
-            continue;
-          }
-
-          // --------------------------------------------
-          // CONFIRMÉ
-          // --------------------------------------------
+          channel = channel.trim();
 
           match.tv =
             `${channel} • NBA League Pass`;
 
           console.log(
-            `📺 ${channel} confirmé : ` +
-            `${match.home} - ${match.away} ` +
-            `(${String(event.hour).padStart(2, "0")}:${String(event.minute).padStart(2, "0")})`
+            `📺 CONFIRMÉ : ${match.home} - ${match.away} → ${channel}`
           );
 
-          confirmedCount++;
+          confirmed++;
           break;
         }
+
+        homePosition = page.indexOf(
+          home,
+          homePosition + home.length
+        );
       }
     }
 
     console.log(
-      `📺 ${confirmedCount} match(s) NBA beIN confirmé(s) sur J à J+2`
+      `📺 ${confirmed} match(s) NBA beIN confirmé(s)`
     );
 
   } catch (e) {
