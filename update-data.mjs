@@ -159,8 +159,12 @@ async function addBeinBroadcasters() {
       );
 
       const zone = page.slice(start, end);
+        console.log("🔎 DATE MATCH :", matchDay);
+  console.log("🔎 DATE RECHERCHEE :", day);
+  console.log("🔎 ZONE TV-SPORTS :", zone);
+}
 
-      if (zone.includes("beinsports") && zone.includes(day)) {
+      if (zone.includes("beinsports")) {
         match.tv = "beIN SPORTS • NBA League Pass";
         console.log(`📺 beIN confirmé : ${match.home} - ${match.away}`);
       }
