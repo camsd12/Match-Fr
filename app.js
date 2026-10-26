@@ -26,3 +26,15 @@ document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.que
 document.querySelector('#refresh').onclick=load;
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');
 load(); setInterval(load,300000);
+setTimeout(() => {
+  const programmes = document.querySelectorAll(".schedule-program");
+
+  console.log("🔎 TV-Sports détectés :", programmes.length);
+
+  programmes.forEach((programme, index) => {
+    console.log(
+      `📺 TV ${index + 1}:`,
+      programme.innerText.replace(/\s+/g, " ").trim()
+    );
+  });
+}, 5000);
