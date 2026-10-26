@@ -124,7 +124,7 @@ function normalizeTeamName(name) {
 }
 async function addBeinBroadcasters() {
   try {
-    console.log("📺 Vérification des diffusions NBA sur beIN...");
+    console.log("📺 Vérification beIN avec contrôle de la date...");
 
     const response = await fetch("https://tv-sports.fr/basket/nba");
 
@@ -136,25 +136,64 @@ async function addBeinBroadcasters() {
     const html = await response.text();
     const nbaMatches = out.filter(m => m.sport === "NBA");
 
-    // Nettoyage du HTML pour faciliter la recherche.
-    const page = normalizeTeamName(
-      html
-        .replace(/<script[\s\S]*?<\/script>/gi, " ")
-        .replace(/<style[\s\S]*?<\/style>/gi, " ")
-        .replace(/<[^>]+>/g, " ")
-    );
+    // Texte lisible de la page, sans scripts ni balises HTML.
+    const cleanHtml = html
+      .replace(/<script[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/\s+/g, " ");
 
-    // Noms utilisés par les sites TV lorsqu'ils sont différents
-    // des noms complets BALLDONTLIE.
+    const page = normalizeTeamName(cleanHtml);
+
     const aliases = {
-      "philadelphia76ers": ["philadelphia76ers", "philadelphia", "76ers"],
-      "portlandtrailblazers": ["portlandtrailblazers", "portland", "trailblazers"],
-      "losangelesclippers": ["losangelesclippers", "laclippers", "clippers"],
-      "losangeleslakers": ["losangeleslakers", "lalakers", "lakers"],
-      "oklahomacitythunder": ["oklahomacitythunder", "oklahomacity", "thunder"],
-      "goldenstatewarriors": ["goldenstatewarriors", "goldenstate", "warriors"],
-      "newyorkknicks": ["newyorkknicks", "newyork", "knicks"],
-      "sanantoniospurs": ["sanantoniospurs", "sanantonio", "spurs"]
+      philadelphia76ers: [
+        "philadelphia76ers",
+        "philadelphia",
+        "76ers"
+      ],
+
+      portlandtrailblazers: [
+        "portlandtrailblazers",
+        "portland",
+        "trailblazers"
+      ],
+
+      losangelesclippers: [
+        "losangelesclippers",
+        "laclippers",
+        "clippers"
+      ],
+
+      losangeleslakers: [
+        "losangeleslakers",
+        "lalakers",
+        "lakers"
+      ],
+
+      oklahomacitythunder: [
+        "oklahomacitythunder",
+        "oklahomacity",
+        "thunder"
+      ],
+
+      goldenstatewarriors: [
+        "goldenstatewarriors",
+        "goldenstate",
+        "warriors"
+      ],
+
+      newyorkknicks: [
+        "newyorkknicks",
+        "newyork",
+        "knicks"
+      ],
+
+      sanantoniospurs: [
+        "sanantoniospurs",
+        "sanantonio",
+        "spurs"
+      ]
     };
 
     function teamNames(name) {
@@ -168,18 +207,58 @@ async function addBeinBroadcasters() {
       for (const name of names) {
         if (!name || name.length < 4) continue;
 
-        let pos = text.indexOf(name);
+        let position = text.indexOf(name);
 
-        while (pos !== -1) {
-          positions.push(pos);
-          pos = text.indexOf(name, pos + name.length);
+        while (position !== -1) {
+          positions.push(position);
+
+          position = text.indexOf(
+            name,
+            position + name.length
+          );
         }
       }
 
-      return positions;
+      return [...new Set(positions)];
     }
 
     for (const match of nbaMatches) {
+      const matchDate = new Date(match.utc);
+
+      if (Number.isNaN(matchDate.valueOf())) continue;
+
+      // Date du match telle qu'elle est vécue en France.
+      // Exemple : un match du dimanche soir aux USA peut être
+      // lundi matin en France.
+      const dateParts = new Intl.DateTimeFormat("fr-FR", {
+        timeZone: "Europe/Paris",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).formatToParts(matchDate);
+
+      const dayNumber =
+        dateParts.find(p => p.type === "day")?.value || "";
+
+      const month =
+        dateParts.find(p => p.type === "month")?.value || "";
+
+      const year =
+        dateParts.find(p => p.type === "year")?.value || "";
+
+      // Plusieurs écritures possibles de la date.
+      const dateVariants = [
+        normalizeTeamName(`${dayNumber} ${month} ${year}`),
+        normalizeTeamName(`${dayNumber} ${month}`),
+        normalizeTeamName(`${dayNumber}/${matchDate.toLocaleDateString(
+          "fr-FR",
+          {
+            timeZone: "Europe/Paris",
+            month: "2-digit"
+          }
+        )}`)
+      ].filter(Boolean);
+
       const homeNames = teamNames(match.home);
       const awayNames = teamNames(match.away);
 
@@ -188,15 +267,18 @@ async function addBeinBroadcasters() {
 
       let confirmed = false;
 
-      // Les deux équipes doivent apparaître très proches l'une
-      // de l'autre. On ne cherche plus dans une énorme zone.
       for (const homePos of homePositions) {
         for (const awayPos of awayPositions) {
-          if (Math.abs(homePos - awayPos) > 600) continue;
+
+          // Les deux équipes doivent vraiment appartenir
+          // au même petit bloc de programme.
+          if (Math.abs(homePos - awayPos) > 500) {
+            continue;
+          }
 
           const start = Math.max(
             0,
-            Math.min(homePos, awayPos) - 300
+            Math.min(homePos, awayPos) - 500
           );
 
           const end = Math.min(
@@ -206,16 +288,28 @@ async function addBeinBroadcasters() {
 
           const zone = page.slice(start, end);
 
-          // beIN doit être indiqué dans CE MÊME bloc.
-          if (
+          const hasBein =
             zone.includes("beinsports") ||
             zone.includes("bein1") ||
             zone.includes("bein2") ||
-            zone.includes("bein3")
-          ) {
-            confirmed = true;
-            break;
+            zone.includes("bein3");
+
+          if (!hasBein) continue;
+
+          // NOUVEAU :
+          // la date française doit également être présente
+          // dans cette même zone.
+          const hasCorrectDate =
+            dateVariants.some(date =>
+              date && zone.includes(date)
+            );
+
+          if (!hasCorrectDate) {
+            continue;
           }
+
+          confirmed = true;
+          break;
         }
 
         if (confirmed) break;
@@ -223,13 +317,15 @@ async function addBeinBroadcasters() {
 
       if (confirmed) {
         match.tv = "beIN SPORTS • NBA League Pass";
+
         console.log(
-          `📺 beIN confirmé : ${match.home} - ${match.away}`
+          `📺 beIN confirmé : ${match.home} - ${match.away} (${dayNumber} ${month})`
         );
       }
     }
 
     console.log("📺 Vérification beIN terminée");
+
   } catch (e) {
     console.warn("TV-Sports :", e.message);
   }
