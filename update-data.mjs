@@ -124,7 +124,7 @@ function normalizeTeamName(name) {
 }
 async function addBeinBroadcasters() {
   try {
-    console.log("📺 Récupération du programme NBA beIN...");
+    console.log("📺 Vérification NBA beIN : J à J+2...");
 
     const response = await fetch("https://tv-sports.fr/basket/nba");
 
@@ -135,20 +135,96 @@ async function addBeinBroadcasters() {
 
     const html = await response.text();
 
+    // Transforme le HTML en texte tout en gardant des séparations.
     const text = html
+      .replace(/<script[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<\/?(?:h1|h2|h3|li|div|p|article|section|br)[^>]*>/gi, "\n")
+      .replace(/<[^>]+>/g, " ")
       .replace(/&nbsp;/gi, " ")
       .replace(/&amp;/gi, "&")
       .replace(/&#39;/gi, "'")
       .replace(/&quot;/gi, '"')
-      .replace(/<script[\s\S]*?<\/script>/gi, " ")
-      .replace(/<style[\s\S]*?<\/style>/gi, " ")
-      .replace(/<[^>]+>/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
+      .replace(/[ \t]+/g, " ")
+      .replace(/\n+/g, "\n");
 
     const nbaMatches = out.filter(m => m.sport === "NBA");
 
-    function simpleName(name) {
+    // --------------------------------------------------
+    // Dates J, J+1 et J+2 en heure française
+    // --------------------------------------------------
+
+    function parisDateKey(date) {
+      const parts = new Intl.DateTimeFormat("fr-CA", {
+        timeZone: "Europe/Paris",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(date);
+
+      const year = parts.find(p => p.type === "year")?.value;
+      const month = parts.find(p => p.type === "month")?.value;
+      const day = parts.find(p => p.type === "day")?.value;
+
+      return `${year}-${month}-${day}`;
+    }
+
+    function parisDateLabel(date) {
+      return new Intl.DateTimeFormat("fr-FR", {
+        timeZone: "Europe/Paris",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).format(date);
+    }
+
+    const now = new Date();
+
+    // On construit les trois dates à partir de midi pour
+    // éviter les problèmes liés au changement d'heure.
+    const todayParts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Paris",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(now);
+
+    const year = Number(
+      todayParts.find(p => p.type === "year")?.value
+    );
+
+    const month = Number(
+      todayParts.find(p => p.type === "month")?.value
+    );
+
+    const day = Number(
+      todayParts.find(p => p.type === "day")?.value
+    );
+
+    const days = [];
+
+    for (let offset = 0; offset <= 2; offset++) {
+      const d = new Date(
+        Date.UTC(year, month - 1, day + offset, 12, 0, 0)
+      );
+
+      days.push({
+        key: parisDateKey(d),
+        label: parisDateLabel(d)
+      });
+    }
+
+    console.log(
+      `📅 Journées contrôlées : ${days
+        .map(d => d.label)
+        .join(" | ")}`
+    );
+
+    // --------------------------------------------------
+    // Normalisation des noms d'équipes
+    // --------------------------------------------------
+
+    function normal(name) {
       return String(name || "")
         .toLowerCase()
         .normalize("NFD")
@@ -156,159 +232,297 @@ async function addBeinBroadcasters() {
         .replace(/[^a-z0-9]/g, "");
     }
 
-    function sameTeam(a, b) {
-      const x = simpleName(a);
-      const y = simpleName(b);
+    const aliases = {
+      laclippers: "losangelesclippers",
+      losangelesclippers: "losangelesclippers",
 
-      if (!x || !y) return false;
+      portlandtrailblazers: "portlandtrailblazers",
 
-      if (x === y) return true;
-      if (x.includes(y)) return true;
-      if (y.includes(x)) return true;
+      philadelphia76ers: "philadelphia76ers",
 
-      return false;
+      oklahomacitythunder: "oklahomacitythunder",
+
+      goldenstatewarriors: "goldenstatewarriors",
+
+      newyorkknicks: "newyorkknicks",
+
+      sanantoniospurs: "sanantoniospurs"
+    };
+
+    function teamKey(name) {
+      const key = normal(name);
+      return aliases[key] || key;
     }
 
-    /*
-      On découpe la page à partir de chaque apparition
-      de "Direct". Une petite zone contient normalement :
-      heure + NBA + équipes + chaîne.
-    */
+    // --------------------------------------------------
+    // Découpage de la page par journée
+    // --------------------------------------------------
 
-    const directRegex = /(\d{1,2})h(\d{2})\s+Direct/gi;
+    const monthNames =
+      "janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre";
 
-    const positions = [];
-    let found;
+    const dateRegex = new RegExp(
+      `(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\\s+` +
+      `(\\d{1,2})\\s+(${monthNames})\\s+(\\d{4})`,
+      "gi"
+    );
 
-    while ((found = directRegex.exec(text)) !== null) {
-      positions.push({
-        index: found.index,
-        hour: Number(found[1]),
-        minute: Number(found[2])
+    const headers = [];
+    let dateMatch;
+
+    while ((dateMatch = dateRegex.exec(text)) !== null) {
+      headers.push({
+        index: dateMatch.index,
+        label: dateMatch[0]
       });
     }
 
     let confirmedCount = 0;
 
-    for (let i = 0; i < positions.length; i++) {
-      const current = positions[i];
+    // --------------------------------------------------
+    // Analyse uniquement J, J+1 et J+2
+    // --------------------------------------------------
+
+    for (let i = 0; i < headers.length; i++) {
+      const header = headers[i];
 
       const nextIndex =
-        i + 1 < positions.length
-          ? positions[i + 1].index
-          : Math.min(text.length, current.index + 800);
+        i + 1 < headers.length
+          ? headers[i + 1].index
+          : text.length;
 
-      const block = text.slice(
-        current.index,
-        Math.min(nextIndex, current.index + 800)
+      const dayBlock = text.slice(
+        header.index,
+        nextIndex
       );
 
-      if (!/NBA/i.test(block)) continue;
-      if (!/beIN SPORTS/i.test(block)) continue;
-
-      /*
-        Recherche d'un intitulé du type :
-        Equipe A – Equipe B
-      */
-
-      const matchName = block.match(
-        /NBA\s+([A-Za-zÀ-ÿ0-9 .'-]+?)\s+[–-]\s+([A-Za-zÀ-ÿ0-9 .'-]+?)(?=\s+beIN SPORTS|\s+NBA League Pass|\s+\d{1,2}h\d{2}|$)/i
+      const headerDate = header.label.match(
+        /(\d{1,2})\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(\d{4})/i
       );
 
-      if (!matchName) continue;
+      if (!headerDate) continue;
 
-      const tvHome = matchName[1].trim();
-      const tvAway = matchName[2].trim();
+      const monthMap = {
+        janvier: 1,
+        février: 2,
+        mars: 3,
+        avril: 4,
+        mai: 5,
+        juin: 6,
+        juillet: 7,
+        août: 8,
+        septembre: 9,
+        octobre: 10,
+        novembre: 11,
+        décembre: 12
+      };
 
-      /*
-        Récupère la chaîne exacte :
-        beIN SPORTS 1, 2 ou 3.
-      */
+      const dd = String(Number(headerDate[1])).padStart(2, "0");
+      const mm = String(
+        monthMap[headerDate[2].toLowerCase()]
+      ).padStart(2, "0");
 
-      const channelMatch = block.match(
-        /beIN SPORTS\s*([123])/i
-      );
+      const yyyy = headerDate[3];
 
-      const channel = channelMatch
-        ? `beIN SPORTS ${channelMatch[1]}`
-        : "beIN SPORTS";
+      const dayKey = `${yyyy}-${mm}-${dd}`;
 
-      /*
-        On cherche maintenant CE match précis
-        dans les matchs NBA de Match FR.
-      */
+      // On ignore tout ce qui n'est pas J, J+1 ou J+2.
+      if (!days.some(d => d.key === dayKey)) {
+        continue;
+      }
 
-      for (const match of nbaMatches) {
-        const normalOrder =
-          sameTeam(match.home, tvHome) &&
-          sameTeam(match.away, tvAway);
+      console.log(`📅 Analyse TV : ${dayKey}`);
 
-        const reverseOrder =
-          sameTeam(match.home, tvAway) &&
-          sameTeam(match.away, tvHome);
+      // ------------------------------------------------
+      // Chaque émission commence par une heure suivie
+      // de Direct ou Rediffusion.
+      // ------------------------------------------------
 
-        if (!normalOrder && !reverseOrder) continue;
+      const eventRegex =
+        /(\d{1,2})h(\d{2})\s+(Direct|Rediffusion(?:\s+Rediff\.)?)/gi;
 
-        /*
-          Vérification de l'heure française.
+      const events = [];
+      let eventMatch;
 
-          On accepte une petite marge car les sources
-          peuvent parfois différer légèrement.
-        */
+      while ((eventMatch = eventRegex.exec(dayBlock)) !== null) {
+        events.push({
+          index: eventMatch.index,
+          hour: Number(eventMatch[1]),
+          minute: Number(eventMatch[2]),
+          type: eventMatch[3]
+        });
+      }
 
-        const matchDate = new Date(match.utc);
+      for (let e = 0; e < events.length; e++) {
+        const event = events[e];
 
-        const parisParts = new Intl.DateTimeFormat(
-          "fr-FR",
-          {
-            timeZone: "Europe/Paris",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false
+        const eventEnd =
+          e + 1 < events.length
+            ? events[e + 1].index
+            : dayBlock.length;
+
+        const eventBlock = dayBlock.slice(
+          event.index,
+          eventEnd
+        );
+
+        // ----------------------------------------------
+        // RÈGLE IMPORTANTE :
+        // uniquement les DIRECTS.
+        // ----------------------------------------------
+
+        if (!/^Direct$/i.test(event.type.trim())) {
+          continue;
+        }
+
+        // NBA uniquement.
+        if (!/\bNBA\b/i.test(eventBlock)) {
+          continue;
+        }
+
+        // beIN uniquement.
+        const channelMatch = eventBlock.match(
+          /beIN SPORTS(?:\s+MAX)?(?:\s+\d+)?/i
+        );
+
+        if (!channelMatch) {
+          continue;
+        }
+
+        const channel = channelMatch[0]
+          .replace(/\s+/g, " ")
+          .trim();
+
+        // ----------------------------------------------
+        // Trouve l'affiche située dans ce bloc.
+        // ----------------------------------------------
+
+        const lines = eventBlock
+          .split("\n")
+          .map(line => line.trim())
+          .filter(Boolean);
+
+        const matchupLine = lines.find(line =>
+          /[–-]/.test(line) &&
+          !/beIN SPORTS/i.test(line)
+        );
+
+        if (!matchupLine) {
+          continue;
+        }
+
+        const teams = matchupLine.split(/\s+[–-]\s+/);
+
+        if (teams.length !== 2) {
+          continue;
+        }
+
+        const tvHome = teams[0].trim();
+        const tvAway = teams[1].trim();
+
+        const tvHomeKey = teamKey(tvHome);
+        const tvAwayKey = teamKey(tvAway);
+
+        // ----------------------------------------------
+        // Cherche le même match dans Match FR.
+        // ----------------------------------------------
+
+        for (const match of nbaMatches) {
+          const matchDate = new Date(match.utc);
+
+          if (Number.isNaN(matchDate.valueOf())) {
+            continue;
           }
-        ).formatToParts(matchDate);
 
-        const parisHour = Number(
-          parisParts.find(p => p.type === "hour")?.value
-        );
+          // Le match doit appartenir à la même journée
+          // française 00:00 -> 00:00.
+          if (parisDateKey(matchDate) !== dayKey) {
+            continue;
+          }
 
-        const parisMinute = Number(
-          parisParts.find(p => p.type === "minute")?.value
-        );
+          const appHome = teamKey(match.home);
+          const appAway = teamKey(match.away);
 
-        const appMinutes =
-          parisHour * 60 + parisMinute;
+          const sameOrder =
+            appHome === tvHomeKey &&
+            appAway === tvAwayKey;
 
-        const tvMinutes =
-          current.hour * 60 + current.minute;
+          const reverseOrder =
+            appHome === tvAwayKey &&
+            appAway === tvHomeKey;
 
-        let difference =
-          Math.abs(appMinutes - tvMinutes);
+          if (!sameOrder && !reverseOrder) {
+            continue;
+          }
 
-        difference = Math.min(
-          difference,
-          1440 - difference
-        );
+          // --------------------------------------------
+          // Vérification de l'heure française.
+          // --------------------------------------------
 
-        if (difference > 30) continue;
+          const timeParts = new Intl.DateTimeFormat(
+            "fr-FR",
+            {
+              timeZone: "Europe/Paris",
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: false
+            }
+          ).formatToParts(matchDate);
 
-        match.tv = `${channel} • NBA League Pass`;
+          const appHour = Number(
+            timeParts.find(p => p.type === "hour")?.value
+          );
 
-        console.log(
-          `📺 ${channel} confirmé : ${match.home} - ${match.away}`
-        );
+          const appMinute = Number(
+            timeParts.find(p => p.type === "minute")?.value
+          );
 
-        confirmedCount++;
-        break;
+          const appTotal =
+            appHour * 60 + appMinute;
+
+          const tvTotal =
+            event.hour * 60 + event.minute;
+
+          const difference =
+            Math.abs(appTotal - tvTotal);
+
+          // Tolérance maximale : 30 minutes.
+          if (difference > 30) {
+            console.log(
+              `⚠️ Match trouvé mais heure différente : ${match.home} - ${match.away}`
+            );
+
+            continue;
+          }
+
+          // --------------------------------------------
+          // CONFIRMÉ
+          // --------------------------------------------
+
+          match.tv =
+            `${channel} • NBA League Pass`;
+
+          console.log(
+            `📺 ${channel} confirmé : ` +
+            `${match.home} - ${match.away} ` +
+            `(${String(event.hour).padStart(2, "0")}:${String(event.minute).padStart(2, "0")})`
+          );
+
+          confirmedCount++;
+          break;
+        }
       }
     }
 
     console.log(
-      `📺 ${confirmedCount} match(s) NBA beIN confirmé(s)`
+      `📺 ${confirmedCount} match(s) NBA beIN confirmé(s) sur J à J+2`
     );
 
   } catch (e) {
-    console.warn("TV-Sports :", e.message);
+    console.warn(
+      "TV-Sports :",
+      e.message
+    );
   }
 }
 await Promise.all([football(),nba()]);
