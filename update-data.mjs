@@ -195,8 +195,8 @@ if (!uniqueChannelIds.length) {
       "1DDBCE01-E204-49F7-9153-933B230CC217"
     );
 
-    params.set("startBefore", end.toISOString());
-    params.set("endAfter", start.toISOString());
+    params.set("startBefore", start.toISOString());
+    params.set("endAfter", end.toISOString());
     params.set("limit", "3000");
 
     for (const id of uniqueChannelIds) {
