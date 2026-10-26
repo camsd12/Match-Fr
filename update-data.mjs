@@ -162,7 +162,6 @@ async function addBeinBroadcasters() {
         console.log("🔎 DATE MATCH :", matchDay);
   console.log("🔎 DATE RECHERCHEE :", day);
   console.log("🔎 ZONE TV-SPORTS :", zone);
-}
 
       if (zone.includes("beinsports")) {
         match.tv = "beIN SPORTS • NBA League Pass";
