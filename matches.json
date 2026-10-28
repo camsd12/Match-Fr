@@ -8,7 +8,7 @@
     "homeIcon": "https://crests.football-data.org/98.png",
     "awayIcon": "https://crests.football-data.org/103.png",
     "utc": "2026-10-28T17:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -21,7 +21,7 @@
     "homeIcon": "https://crests.football-data.org/454.png",
     "awayIcon": "https://crests.football-data.org/108.png",
     "utc": "2026-10-28T17:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -34,7 +34,7 @@
     "homeIcon": "https://crests.football-data.org/112.png",
     "awayIcon": "https://crests.football-data.org/115.png",
     "utc": "2026-10-28T17:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
