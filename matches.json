@@ -8,7 +8,7 @@
     "homeIcon": "https://crests.football-data.org/533.png",
     "awayIcon": "https://crests.football-data.org/524.png",
     "utc": "2026-10-30T18:00:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
@@ -21,7 +21,7 @@
     "homeIcon": "https://crests.football-data.org/522.png",
     "awayIcon": "https://crests.football-data.org/529.png",
     "utc": "2026-10-30T18:00:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
