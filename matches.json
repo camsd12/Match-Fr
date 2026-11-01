@@ -8,7 +8,7 @@
     "homeIcon": "https://crests.football-data.org/7397.png",
     "awayIcon": "https://crests.football-data.org/454.png",
     "utc": "2026-11-01T11:30:00Z",
-    "status": "PAUSED",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -34,7 +34,7 @@
     "homeIcon": "https://crests.football-data.org/576.png",
     "awayIcon": "https://crests.football-data.org/519.png",
     "utc": "2026-11-01T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
@@ -47,7 +47,7 @@
     "homeIcon": "https://crests.football-data.org/470.png",
     "awayIcon": "https://crests.football-data.org/586.png",
     "utc": "2026-11-01T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -60,7 +60,7 @@
     "homeIcon": "https://crests.football-data.org/110.png",
     "awayIcon": "https://crests.football-data.org/104.png",
     "utc": "2026-11-01T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -99,7 +99,7 @@
     "homeIcon": "https://crests.football-data.org/523.png",
     "awayIcon": "https://crests.football-data.org/532.png",
     "utc": "2026-11-01T16:15:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
@@ -112,7 +112,7 @@
     "homeIcon": "https://crests.football-data.org/1045.png",
     "awayIcon": "https://crests.football-data.org/548.png",
     "utc": "2026-11-01T16:15:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
@@ -125,7 +125,7 @@
     "homeIcon": "https://crests.football-data.org/64.png",
     "awayIcon": "https://crests.football-data.org/57.png",
     "utc": "2026-11-01T16:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -151,7 +151,7 @@
     "homeIcon": "https://crests.football-data.org/5890.png",
     "awayIcon": "https://crests.football-data.org/107.png",
     "utc": "2026-11-01T17:00:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
