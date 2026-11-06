@@ -1,31 +1,5 @@
 [
   {
-    "id": "nba-21718041",
-    "sport": "NBA",
-    "comp": "NBA",
-    "home": "Phoenix Suns",
-    "away": "Orlando Magic",
-    "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
-    "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
-    "utc": "2026-11-06T02:00:00.000Z",
-    "status": "scheduled",
-    "tv": "NBA League Pass",
-    "source": "BALLDONTLIE"
-  },
-  {
-    "id": "nba-21718042",
-    "sport": "NBA",
-    "comp": "NBA",
-    "home": "Golden State Warriors",
-    "away": "Miami Heat",
-    "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/gsw.png",
-    "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-    "utc": "2026-11-06T03:00:00.000Z",
-    "status": "scheduled",
-    "tv": "NBA League Pass",
-    "source": "BALLDONTLIE"
-  },
-  {
     "id": "fd-565852",
     "sport": "Football",
     "comp": "Bundesliga",
@@ -1922,5 +1896,70 @@
     "status": "scheduled",
     "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
+  },
+  {
+    "id": "nba-21718142",
+    "sport": "NBA",
+    "comp": "NBA",
+    "home": "Sacramento Kings",
+    "away": "Phoenix Suns",
+    "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+    "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+    "utc": "2026-11-19T03:00:00.000Z",
+    "status": "scheduled",
+    "tv": "NBA League Pass",
+    "source": "BALLDONTLIE"
+  },
+  {
+    "id": "nba-21718143",
+    "sport": "NBA",
+    "comp": "NBA",
+    "home": "Memphis Grizzlies",
+    "away": "Golden State Warriors",
+    "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+    "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/gsw.png",
+    "utc": "2026-11-20T01:00:00.000Z",
+    "status": "scheduled",
+    "tv": "NBA League Pass",
+    "source": "BALLDONTLIE"
+  },
+  {
+    "id": "fd-565859",
+    "sport": "Football",
+    "comp": "Bundesliga",
+    "home": "Bayern",
+    "away": "1. FC Köln",
+    "homeIcon": "https://crests.football-data.org/5.png",
+    "awayIcon": "https://crests.football-data.org/1.png",
+    "utc": "2026-11-20T19:30:00Z",
+    "status": "TIMED",
+    "tv": "beIN SPORTS",
+    "source": "football-data.org"
+  },
+  {
+    "id": "fd-559622",
+    "sport": "Football",
+    "comp": "Ligue 1",
+    "home": "Troyes",
+    "away": "Le Havre",
+    "homeIcon": "https://crests.football-data.org/531.png",
+    "awayIcon": "https://crests.football-data.org/533.png",
+    "utc": "2026-11-20T19:45:00Z",
+    "status": "TIMED",
+    "tv": "Ligue 1+",
+    "source": "football-data.org"
+  },
+  {
+    "id": "fd-564748",
+    "sport": "Football",
+    "comp": "Liga",
+    "home": "Athletic",
+    "away": "Espanyol",
+    "homeIcon": "https://crests.football-data.org/77.png",
+    "awayIcon": "https://crests.football-data.org/80.png",
+    "utc": "2026-11-20T20:00:00Z",
+    "status": "TIMED",
+    "tv": "DAZN / Disney+",
+    "source": "football-data.org"
   }
 ]
