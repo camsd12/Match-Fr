@@ -1209,19 +1209,6 @@
     "source": "BALLDONTLIE"
   },
   {
-    "id": "nba-21718129",
-    "sport": "NBA",
-    "comp": "NBA",
-    "home": "Los Angeles Lakers",
-    "away": "Charlotte Hornets",
-    "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
-    "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
-    "utc": "2026-11-18T03:00:00.000Z",
-    "status": "scheduled",
-    "tv": "NBA League Pass",
-    "source": "BALLDONTLIE"
-  },
-  {
     "id": "nba-21718130",
     "sport": "NBA",
     "comp": "NBA",
@@ -1229,6 +1216,19 @@
     "away": "Utah Jazz",
     "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+    "utc": "2026-11-18T03:30:00.000Z",
+    "status": "scheduled",
+    "tv": "NBA League Pass",
+    "source": "BALLDONTLIE"
+  },
+  {
+    "id": "nba-21718129",
+    "sport": "NBA",
+    "comp": "NBA",
+    "home": "Los Angeles Lakers",
+    "away": "Charlotte Hornets",
+    "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+    "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
     "utc": "2026-11-18T04:00:00.000Z",
     "status": "scheduled",
     "tv": "NBA League Pass",
