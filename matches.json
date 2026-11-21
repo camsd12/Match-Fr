@@ -8,7 +8,7 @@
     "homeIcon": "https://crests.football-data.org/65.png",
     "awayIcon": "https://crests.football-data.org/63.png",
     "utc": "2026-11-21T12:30:00Z",
-    "status": "IN_PLAY",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -21,7 +21,7 @@
     "homeIcon": "https://crests.football-data.org/263.png",
     "awayIcon": "https://crests.football-data.org/560.png",
     "utc": "2026-11-21T13:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
@@ -34,7 +34,7 @@
     "homeIcon": "https://crests.football-data.org/7397.png",
     "awayIcon": "https://crests.football-data.org/104.png",
     "utc": "2026-11-21T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -47,7 +47,7 @@
     "homeIcon": "https://crests.football-data.org/110.png",
     "awayIcon": "https://crests.football-data.org/5890.png",
     "utc": "2026-11-21T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -60,7 +60,7 @@
     "homeIcon": "https://crests.football-data.org/3.png",
     "awayIcon": "https://crests.football-data.org/29.png",
     "utc": "2026-11-21T14:30:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
@@ -73,7 +73,7 @@
     "homeIcon": "https://crests.football-data.org/28.png",
     "awayIcon": "https://crests.football-data.org/721.png",
     "utc": "2026-11-21T14:30:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
@@ -86,7 +86,7 @@
     "homeIcon": "https://crests.football-data.org/719.png",
     "awayIcon": "https://crests.football-data.org/17.png",
     "utc": "2026-11-21T14:30:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
@@ -99,7 +99,7 @@
     "homeIcon": "https://crests.football-data.org/18.png",
     "awayIcon": "https://crests.football-data.org/4.png",
     "utc": "2026-11-21T14:30:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
@@ -112,7 +112,7 @@
     "homeIcon": "https://crests.football-data.org/19.png",
     "awayIcon": "https://crests.football-data.org/2.png",
     "utc": "2026-11-21T14:30:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
@@ -125,7 +125,7 @@
     "homeIcon": "https://crests.football-data.org/61.png",
     "awayIcon": "https://crests.football-data.org/341.png",
     "utc": "2026-11-21T15:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -138,7 +138,7 @@
     "homeIcon": "https://crests.football-data.org/58.png",
     "awayIcon": "https://crests.football-data.org/71.png",
     "utc": "2026-11-21T15:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -151,7 +151,7 @@
     "homeIcon": "https://crests.football-data.org/bournemouth.png",
     "awayIcon": "https://crests.football-data.org/351.png",
     "utc": "2026-11-21T15:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -164,7 +164,7 @@
     "homeIcon": "https://crests.football-data.org/73.png",
     "awayIcon": "https://crests.football-data.org/349.png",
     "utc": "2026-11-21T15:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -177,7 +177,7 @@
     "homeIcon": "https://crests.football-data.org/1076.png",
     "awayIcon": "https://crests.football-data.org/354.png",
     "utc": "2026-11-21T15:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -190,7 +190,7 @@
     "homeIcon": "https://crests.football-data.org/87.png",
     "awayIcon": "https://crests.football-data.org/95.png",
     "utc": "2026-11-21T15:15:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
@@ -203,7 +203,7 @@
     "homeIcon": "https://crests.football-data.org/522.png",
     "awayIcon": "https://crests.football-data.org/524.png",
     "utc": "2026-11-21T16:15:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
@@ -216,7 +216,7 @@
     "homeIcon": "https://crests.football-data.org/112.png",
     "awayIcon": "https://crests.football-data.org/100.png",
     "utc": "2026-11-21T17:00:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -229,7 +229,7 @@
     "homeIcon": "https://crests.football-data.org/67.png",
     "awayIcon": "https://crests.football-data.org/57.png",
     "utc": "2026-11-21T17:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -242,7 +242,7 @@
     "homeIcon": "https://crests.football-data.org/559.png",
     "awayIcon": "https://crests.football-data.org/90.png",
     "utc": "2026-11-21T17:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
@@ -255,7 +255,7 @@
     "homeIcon": "https://crests.football-data.org/6.png",
     "awayIcon": "https://crests.football-data.org/10.png",
     "utc": "2026-11-21T17:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "beIN SPORTS",
     "source": "football-data.org"
   },
@@ -268,7 +268,7 @@
     "homeIcon": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
     "awayIcon": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
     "utc": "2026-11-21T18:00:00.000Z",
-    "status": "scheduled",
+    "status": "in_progress",
     "tv": "NBA League Pass",
     "source": "BALLDONTLIE"
   },
