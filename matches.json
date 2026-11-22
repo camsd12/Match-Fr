@@ -8,7 +8,7 @@
     "homeIcon": "https://crests.football-data.org/109.png",
     "awayIcon": "https://crests.football-data.org/454.png",
     "utc": "2026-11-22T11:30:00Z",
-    "status": "IN_PLAY",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -21,7 +21,7 @@
     "homeIcon": "https://crests.football-data.org/81.png",
     "awayIcon": "https://crests.football-data.org/94.png",
     "utc": "2026-11-22T13:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
@@ -34,7 +34,7 @@
     "homeIcon": "https://crests.football-data.org/1045.png",
     "awayIcon": "https://crests.football-data.org/532.png",
     "utc": "2026-11-22T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
@@ -47,7 +47,7 @@
     "homeIcon": "https://crests.football-data.org/322.png",
     "awayIcon": "https://crests.football-data.org/397.png",
     "utc": "2026-11-22T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -60,7 +60,7 @@
     "homeIcon": "https://crests.football-data.org/103.png",
     "awayIcon": "https://crests.football-data.org/115.png",
     "utc": "2026-11-22T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -73,7 +73,7 @@
     "homeIcon": "https://crests.football-data.org/471.png",
     "awayIcon": "https://crests.football-data.org/107.png",
     "utc": "2026-11-22T14:00:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -99,7 +99,7 @@
     "homeIcon": "https://crests.football-data.org/5335.png",
     "awayIcon": "https://crests.football-data.org/92.png",
     "utc": "2026-11-22T15:15:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
@@ -112,7 +112,7 @@
     "homeIcon": "https://crests.football-data.org/525.png",
     "awayIcon": "https://crests.football-data.org/529.png",
     "utc": "2026-11-22T16:15:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "Ligue 1+",
     "source": "football-data.org"
   },
@@ -125,7 +125,7 @@
     "homeIcon": "https://crests.football-data.org/64.png",
     "awayIcon": "https://crests.football-data.org/66.png",
     "utc": "2026-11-22T16:30:00Z",
-    "status": "TIMED",
+    "status": "FINISHED",
     "tv": "CANAL+",
     "source": "football-data.org"
   },
@@ -151,7 +151,7 @@
     "homeIcon": "https://crests.football-data.org/98.png",
     "awayIcon": "https://crests.football-data.org/470.png",
     "utc": "2026-11-22T17:00:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
@@ -164,7 +164,7 @@
     "homeIcon": "https://crests.football-data.org/79.png",
     "awayIcon": "https://crests.football-data.org/84.png",
     "utc": "2026-11-22T17:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN / Disney+",
     "source": "football-data.org"
   },
