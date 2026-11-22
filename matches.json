@@ -8,7 +8,7 @@
     "homeIcon": "https://crests.football-data.org/109.png",
     "awayIcon": "https://crests.football-data.org/454.png",
     "utc": "2026-11-22T11:30:00Z",
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "tv": "DAZN",
     "source": "football-data.org"
   },
