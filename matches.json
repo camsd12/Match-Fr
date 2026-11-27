@@ -2364,5 +2364,57 @@
     "status": "TIMED",
     "tv": "CANAL+",
     "source": "football-data.org"
+  },
+  {
+    "id": "fd-565888",
+    "sport": "Football",
+    "comp": "Bundesliga",
+    "home": "HSV",
+    "away": "Schalke",
+    "homeIcon": "https://crests.football-data.org/7.png",
+    "awayIcon": "https://crests.football-data.org/6.png",
+    "utc": "2026-12-11T19:30:00Z",
+    "status": "TIMED",
+    "tv": "beIN SPORTS",
+    "source": "football-data.org"
+  },
+  {
+    "id": "fd-559602",
+    "sport": "Football",
+    "comp": "Ligue 1",
+    "home": "Auxerre",
+    "away": "Toulouse",
+    "homeIcon": "https://crests.football-data.org/519.png",
+    "awayIcon": "https://crests.football-data.org/511.png",
+    "utc": "2026-12-11T19:45:00Z",
+    "status": "TIMED",
+    "tv": "Ligue 1+",
+    "source": "football-data.org"
+  },
+  {
+    "id": "fd-558491",
+    "sport": "Football",
+    "comp": "Serie A",
+    "home": "Udinese",
+    "away": "Frosinone",
+    "homeIcon": "https://crests.football-data.org/115.png",
+    "awayIcon": "https://crests.football-data.org/470.png",
+    "utc": "2026-12-11T19:45:00Z",
+    "status": "TIMED",
+    "tv": "DAZN",
+    "source": "football-data.org"
+  },
+  {
+    "id": "fd-564783",
+    "sport": "Football",
+    "comp": "Liga",
+    "home": "Elche",
+    "away": "Sevilla FC",
+    "homeIcon": "https://crests.football-data.org/285.png",
+    "awayIcon": "https://crests.football-data.org/559.png",
+    "utc": "2026-12-11T20:00:00Z",
+    "status": "TIMED",
+    "tv": "DAZN / Disney+",
+    "source": "football-data.org"
   }
 ]
